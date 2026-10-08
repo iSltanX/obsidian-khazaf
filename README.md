@@ -1,30 +1,37 @@
-<p align="center">
-  <img src="docs/images/banner.png" alt="Khazaf — an Arabic-first Obsidian theme" width="100%">
-</p>
-
-<p align="center">
-  <a href="#english">English</a> ·
-  <a href="https://github.com/iSltanX/obsidian-khazaf/releases">Releases</a> ·
-  <a href="CHANGELOG.md">Changelog</a>
-</p>
-
 <div dir="rtl">
 
-# خَزَف · Khazaf
+<p align="center">
+  <img src="docs/images/banner.png" alt="خزف: ثيم Obsidian للكتابة العربية" width="100%">
+</p>
 
-ثيم Obsidian مصمَّم للكتابة العربية الطويلة. الاسم من الخزف: طينٌ مشويّ وطلاءٌ بلون المريمية. سطح ضبابي هادئ، وحبر أردوازي مريح للقراءة، ولمسة طينية واحدة تُعلِّم ما يهمّ: الرابط، والعنصر المحدد، ومرجع الحاشية.
+<h1 align="center">خَزَف · Khazaf</h1>
 
-## لماذا خزف؟
+<p align="center">ثيم Obsidian للكتابة العربية الطويلة: سطح ضبابي، حبر أردوازي، ولمسة طين.</p>
 
-- **عربي أولًا.** الواجهة معكوسة كاملة، والمتن بخط Vazirmatn بحجم 17 وتباعد أسطر 1.75 حتى لا تتصادم الحركات بين الأسطر.
-- **حواشٍ تليق بالعربية.** المرجع رقم صغير بلا أقواس، والقائمة أسفل الملاحظة بخط أصغر، ورابط العودة ↩ بعد النص.
-- **بيت الشعر.** صدر وعجز متقابلان بخط نسخي، ويتراصّان تلقائيًا على الشاشات الضيقة.
-- **كود لا ينقلب.** كتل الكود من اليسار دائمًا داخل الملاحظة العربية، وتتمرّر أفقيًا على الهاتف بدل أن تنكسر.
-- **لا يحتاج شيئًا آخر.** الخطوط الثلاثة مضمّنة داخل الثيم، فيعمل كما هو على الحاسب والهاتف، بلا إضافات.
+<p align="center">
+  <a href="https://github.com/iSltanX/obsidian-khazaf/releases/latest"><img src="https://img.shields.io/github/v/release/iSltanX/obsidian-khazaf?label=%D8%A7%D9%84%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1&color=C2552B" alt="الإصدار"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/%D8%A7%D9%84%D8%B1%D8%AE%D8%B5%D8%A9-MIT-6E8B3D" alt="الرخصة"></a>
+  <img src="https://img.shields.io/badge/Obsidian-1.6%2B-1E2A2C" alt="Obsidian 1.6+">
+</p>
 
-## الصور
+<p align="center">
+  <a href="#المعاينة">المعاينة</a> ·
+  <a href="#التثبيت">التثبيت</a> ·
+  <a href="#التخصيص">التخصيص</a> ·
+  <a href="#بيت-الشعر">بيت الشعر</a> ·
+  <a href="#التطوير">التطوير</a> ·
+  <a href="README.en.md">English</a>
+</p>
 
-لقطات حقيقية من Obsidian 1.14.4 بواجهة عربية.
+## عن خزف
+
+الاسم من الخزف: طينٌ مشويّ وطلاءٌ بلون المريمية. صُمّم الثيم لمن يكتب بالعربية كثيرًا داخل Obsidian، فجعل المتن مركز الاهتمام، وترك الأشرطة والأدوات واضحة دون أن تنافسه. اللون الطيني لا يظهر إلا على ما يهمّ: الرابط، والعنصر المحدد، ومرجع الحاشية.
+
+صُمّم أولًا نظامًا كاملًا في Figma، ثم بُني واختُبر داخل Obsidian الفعلي بواجهة عربية.
+
+## المعاينة
+
+لقطات حقيقية من Obsidian 1.14.4.
 
 | المعاينة الحية · داكن | وضع المصدر · فاتح |
 |---|---|
@@ -32,29 +39,71 @@
 | **القراءة · داكن** | **المبدّل السريع · فاتح** |
 | ![القراءة بالوضع الداكن مع كود وبيت شعر وجدول](docs/screenshots/reading-dark.png) | ![المبدّل السريع](docs/screenshots/quick-switcher-light.png) |
 
+**على الهاتف**
+
 <p align="center">
   <img src="docs/screenshots/mobile-reading-light.png" alt="الهاتف: قراءة فاتح" width="24%">
   <img src="docs/screenshots/mobile-reading-dark.png" alt="الهاتف: قراءة داكن" width="24%">
   <img src="docs/screenshots/mobile-drawer-light.png" alt="الهاتف: درج الملفات" width="24%">
 </p>
 
+## المزايا
+
+**القراءة والكتابة**
+- المتن بخط Vazirmatn بحجم 17 وتباعد أسطر 1.75، حتى لا تتصادم الحركات بين الأسطر.
+- العناوين الكبرى بخط Markazi Text النسخي، والصغرى بخط الواجهة لتبقى واضحة.
+- سطر بعرض 700 بكسل، نحو 70 إلى 85 حرفًا عربيًا في السطر.
+
+**الحواشي**
+- المرجع رقم صغير بلا أقواس، بلون التمييز.
+- قائمة الحواشي أسفل الملاحظة بخط أصغر، ورابط العودة ↩ بعد النص.
+- الحاشية التي قفزت إليها تُظلَّل لتعرف مكانك.
+
+**عناصر المتن**
+- تنبيهات بشريط في بداية السطر وعنوان بلون نوعها.
+- بيت الشعر بصدر وعجز متقابلين، يتراصّان على الشاشات الضيقة.
+- الاقتباس بوزن خفيف بدل المائل، لأن العربية لا مائل لها.
+- الكود من اليسار دائمًا داخل الملاحظة العربية، والعربية داخل تعليقاته تُقرأ صحيحة.
+- جداول بصفوف متناوبة، ووسوم كحبّات، وصناديق مهام بلون الطين.
+
+**الواجهة**
+- واجهة معكوسة كاملة: الملفات في اليمين، والمخطط والروابط الخلفية في اليسار.
+- وضعان فاتح وداكن بالشخصية نفسها.
+- على الهاتف: أسطح أردوازية بدل الأسود الخالص، ولمس أسهل في شجرة الملفات، وكود يتمرّر بدل أن ينكسر.
+
+**بلا اعتماديات**
+- الخطوط الثلاثة مضمّنة داخل الثيم، فيعمل كما هو على الحاسب والهاتف ودون اتصال.
+- لا يحتاج أي إضافة.
+
 ## اللوحة والخطوط
 
 ![لوحة مريمية وطين بالوضعين](docs/images/palette.png)
 
-![الخطوط الثلاث: Markazi Text وVazirmatn وJetBrains Mono](docs/images/typography.png)
+![الخطوط الثلاثة: Markazi Text وVazirmatn وJetBrains Mono](docs/images/typography.png)
 
 ## التثبيت
 
-**من داخل Obsidian:** بعد قبول الثيم في دليل الثيمات، افتح الإعدادات ← المظهر ← الثيمات ← إدارة، وابحث عن **Khazaf**.
+### من متجر الثيمات
 
-**يدويًا:** نزّل `theme.css` و`manifest.json` من [آخر إصدار](https://github.com/iSltanX/obsidian-khazaf/releases/latest)، وضعهما في المجلد:
+> الثيم بانتظار إدراجه في دليل Obsidian. هذه الطريقة تعمل بعد قبوله.
 
-```
-<قبوك>/.obsidian/themes/Khazaf/
-```
+1. افتح **الإعدادات ← المظهر ← الثيمات ← إدارة**.
+2. ابحث عن **Khazaf**.
+3. اضغط **تثبيت واستخدام**.
 
-ثم اختر Khazaf من الإعدادات ← المظهر.
+### يدويًا
+
+1. نزّل `theme.css` و`manifest.json` من [آخر إصدار](https://github.com/iSltanX/obsidian-khazaf/releases/latest).
+2. ضعهما في هذا المجلد داخل قبوك، وأنشئه إن لم يكن موجودًا:
+   ```
+   .obsidian/themes/Khazaf/
+   ```
+3. أعد فتح Obsidian، ثم اختر **Khazaf** من **الإعدادات ← المظهر ← الثيمات**.
+
+### التحديث
+
+- إن ثبّته من المتجر: **الإعدادات ← المظهر ← الثيمات ← تحقق من التحديثات**.
+- إن ثبّته يدويًا: استبدل الملفين بنسختهما من الإصدار الأحدث.
 
 ### إعدادات تكمّل الثيم
 
@@ -62,10 +111,43 @@
 
 | الإعداد | المكان | لماذا |
 |---|---|---|
-| لغة الواجهة: العربية | عام ← اللغة | تعكس الأشرطة والقوائم (يحتاج إعادة تشغيل) |
-| من اليمين إلى اليسار | المحرر | يجعل الاتجاه الافتراضي للمحرر عربيًا |
-| حجم الخط 17 | المظهر ← حجم الخط | الحجم الذي صُمّم عليه الثيم |
-| طول السطر المقروء | المحرر | سطر بعرض 700px، نحو 70 إلى 85 حرفًا |
+| لغة الواجهة: العربية | الإعدادات ← عام ← اللغة | تعكس الأشرطة والقوائم (يحتاج إعادة تشغيل) |
+| من اليمين إلى اليسار | الإعدادات ← المحرر | يجعل الاتجاه الافتراضي للمحرر عربيًا |
+| حجم الخط 17 | الإعدادات ← المظهر ← حجم الخط | الحجم الذي صُمّم عليه الثيم |
+| طول السطر المقروء | الإعدادات ← المحرر | يُفعّل السطر بعرض 700 بكسل |
+
+## التخصيص
+
+الثيم لا يعتمد على إضافة Style Settings في هذا الإصدار. لتغيير شيء، أنشئ مقتطف CSS:
+
+1. افتح **الإعدادات ← المظهر ← مقتطفات CSS**، واضغط أيقونة المجلد.
+2. أنشئ ملفًا باسم `khazaf-custom.css`، والصق فيه ما تريد مما يلي، ثم فعّله.
+
+```css
+/* خط آخر للعناوين، مثل Amiri إن كان مثبّتًا على جهازك */
+body {
+  --khazaf-font-heading: "Amiri", serif;
+}
+
+/* سطر أعرض */
+body {
+  --file-line-width: 780px;
+}
+
+/* لون تمييز مختلف في الوضع الفاتح (الدرجة، التشبع، الإضاءة) */
+.theme-light {
+  --accent-h: 200;
+  --accent-s: 60%;
+  --accent-l: 40%;
+}
+
+/* تباعد أسطر أضيق */
+body {
+  --line-height-normal: 1.65;
+}
+```
+
+كل متغيرات Obsidian الموثقة تعمل أيضًا، وقائمتها في [توثيق Obsidian](https://docs.obsidian.md/Reference/CSS+variables/CSS+variables).
 
 ## بيت الشعر
 
@@ -81,7 +163,13 @@
 
 ![بيت الشعر في وضع القراءة](docs/screenshots/verse-light.png)
 
-الملاحظة نفسها تبقى Markdown عاديًا، ويظهر الجدول عاديًا إن غيّرت الثيم.
+الملاحظة تبقى Markdown عاديًا. إن غيّرت الثيم يومًا ظهر البيت جدولًا مقروءًا داخل تنبيه.
+
+## الإضافات
+
+خزف يلوّن الإضافات الأساسية في Obsidian: البحث، والروابط الخلفية، والمخطط، والوسوم، والمبدّل السريع، ومعاينة الصفحة عند التحويم، وشريط أدوات الهاتف.
+
+لم يُختبر بعد مع إضافات المجتمع، مثل Dataview وStyle Settings وKanban. إن ظهر خلل مع إحداها فافتح بلاغًا.
 
 ## قيود معروفة
 
@@ -90,15 +178,20 @@
 - حقل التاريخ في الخصائص يظهر فارغًا وبحروف معكوسة في الواجهة العربية.
 - السطر الذي يبدأ بحرف لاتيني، مثل `> [!tip] نصيحة`، يُعرض في المحرر من اليسار، لأن Obsidian يحدد اتجاه كل سطر من أول حرف فيه.
 
+## المشكلات والاقتراحات
+
+- **وجدت خللًا؟** افتح [بلاغًا](https://github.com/iSltanX/obsidian-khazaf/issues/new?template=bug_report.md) وأرفق لقطة شاشة، واذكر نسخة Obsidian والجهاز ولغة الواجهة.
+- **عندك فكرة؟** افتح [اقتراحًا](https://github.com/iSltanX/obsidian-khazaf/issues/new?template=feature_request.md).
+
 ## التطوير
 
 ```
-src/            مصدر الثيم مقسّمًا (المتغيرات، المتن، الواجهة، RTL، الهاتف، وضع المصدر)
+src/            مصدر الثيم مقسّمًا: المتغيرات، المتن، الواجهة، RTL، الهاتف، وضع المصدر
 fonts/          ملفات الخطوط ورخصتها
-scripts/        جلب الخطوط، البناء، وأداة فحص داخل Obsidian
+scripts/        جلب الخطوط، والبناء، وأداة فحص داخل Obsidian
 test-vault/     قبو تجريبي بملاحظات عربية حقيقية
 docs/           الصور ولقطات التصميم
-theme.css       ناتج البناء (لا تحرّره يدويًا)
+theme.css       ناتج البناء، لا تحرّره يدويًا
 ```
 
 ```bash
@@ -106,31 +199,29 @@ python3 scripts/fetch-fonts.py   # مرة واحدة
 python3 scripts/build.py         # بعد كل تعديل في src/
 ```
 
-البناء ينسخ الثيم إلى `test-vault`، فافتح هذا المجلد في Obsidian كقبو لتجربة التعديلات.
+البناء ينسخ الثيم إلى `test-vault`، فافتح هذا المجلد في Obsidian كقبو لتجربة تعديلاتك.
 
-للإصدار: ارفع رقم `version` في `manifest.json`، ثم ادفع وسمًا بالرقم نفسه (مثل `0.1.1`)، فينشئ GitHub Actions مسودة إصدار فيها `theme.css` و`manifest.json`.
+**للإصدار:** ارفع رقم `version` في `manifest.json` وأضف سطرًا في [سجل التغييرات](CHANGELOG.md)، ثم ادفع وسمًا بالرقم نفسه، مثل `0.1.1`. ينشئ GitHub Actions مسودة إصدار فيها `theme.css` و`manifest.json`.
 
-التصميم الكامل (الأسس، المكونات، الشاشات، ملاحظات التنفيذ) في ملف Figma خاص بالمشروع، ولقطاته في [docs/design](docs/design).
+للمساهمة اقرأ [دليل المساهمة](CONTRIBUTING.md).
+
+## شكر
+
+- [Vazirmatn](https://github.com/rastikerdar/vazirmatn) لصابر راستي كردار.
+- [Markazi Text](https://github.com/Tarobish/Markazi) لبرنا إيزدبناه وفلوريان رونغه.
+- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono).
+- أيقونات [Lucide](https://lucide.dev) التي يستخدمها Obsidian.
+- فريق [Obsidian](https://obsidian.md) على دعم الواجهة من اليمين إلى اليسار.
 
 ## الرخصة
 
-كود الثيم برخصة [MIT](LICENSE). الخطوط المضمّنة (Vazirmatn، Markazi Text، JetBrains Mono) برخصة [SIL OFL 1.1](fonts/OFL.txt)، وحقوقها في [fonts/NOTICE.md](fonts/NOTICE.md).
-
-</div>
+كود الثيم برخصة [MIT](LICENSE). الخطوط المضمّنة برخصة [SIL OFL 1.1](fonts/OFL.txt)، وحقوقها في [fonts/NOTICE.md](fonts/NOTICE.md).
 
 ---
 
-<a id="english"></a>
+<p align="center"><sub>
+  تصميم وتطوير: سلطان — Sultan · <a href="https://bysltan.com">bysltan.com</a><br>
+  للتواصل: <a href="mailto:iSultanby@gmail.com">iSultanby@gmail.com</a>
+</sub></p>
 
-## English
-
-**Khazaf** (Arabic for *ceramic*: fired clay with a sage glaze) is an Arabic-first theme for Obsidian. Misty surfaces, slate ink and a single terracotta accent for links, selection and footnote references.
-
-- Fully mirrored RTL interface; body text in Vazirmatn at 17px with 1.75 line height so diacritics never collide.
-- Footnotes rendered as bracket-less superscript numbers, a smaller footnote list and a ↩ back-link.
-- A `> [!verse]` callout that lays out classical Arabic poetry in two hemistichs and stacks them on narrow screens.
-- Code blocks always LTR, scrolling horizontally on mobile.
-- Light and dark modes; Obsidian's pure-black mobile dark surfaces are replaced with slate.
-- Fonts (Vazirmatn, Markazi Text, JetBrains Mono) are embedded as WOFF2, so the theme works offline and on mobile with no plugins.
-
-Tested on Obsidian 1.14.4 (desktop, and mobile emulation) with the Arabic interface. Theme code is MIT; bundled fonts are SIL OFL 1.1.
+</div>
