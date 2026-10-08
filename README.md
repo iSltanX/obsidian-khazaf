@@ -9,8 +9,8 @@
 <p align="center">ثيم Obsidian للكتابة العربية الطويلة: سطح ضبابي، حبر أردوازي، ولمسة طين.</p>
 
 <p align="center">
-  <a href="https://github.com/iSltanX/obsidian-khazaf/releases/latest"><img src="https://img.shields.io/github/v/release/iSltanX/obsidian-khazaf?label=%D8%A7%D9%84%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1&color=C2552B" alt="الإصدار"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/%D8%A7%D9%84%D8%B1%D8%AE%D8%B5%D8%A9-MIT-6E8B3D" alt="الرخصة"></a>
+  <a href="https://github.com/iSltanX/obsidian-khazaf/releases/latest"><img src="https://img.shields.io/github/v/release/iSltanX/obsidian-khazaf?label=release&color=C2552B" alt="الإصدار"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-6E8B3D" alt="الرخصة"></a>
   <img src="https://img.shields.io/badge/Obsidian-1.6%2B-1E2A2C" alt="Obsidian 1.6+">
 </p>
 
