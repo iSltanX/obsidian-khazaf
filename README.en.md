@@ -60,7 +60,7 @@ Real screenshots from Obsidian 1.14.4.
 
 ## Installation
 
-**From the theme store** (once the theme is listed): Settings → Appearance → Themes → Manage → search for **Khazaf**.
+**From the theme store:** Khazaf is listed in the [Obsidian theme directory](https://community.obsidian.md/themes/khazaf). Click “Add to Obsidian” there, or go to Settings → Appearance → Themes → Manage and search for **Khazaf**.
 
 **Manually:** download `theme.css` and `manifest.json` from the [latest release](https://github.com/iSltanX/obsidian-khazaf/releases/latest) into `<vault>/.obsidian/themes/Khazaf/`, then select Khazaf under Settings → Appearance.
 

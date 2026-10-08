@@ -7,6 +7,7 @@
 - `LICENSE` صار نص MIT وحده كي يتعرّف عليه GitHub والدليل؛ رخصة الخطوط في `fonts/NOTICE.md` و`fonts/OFL.txt`.
 - وصف إنجليزي في أعلى `README.md`.
 - حُذفت قاعدة `break-inside` من أنماط الطباعة.
+- نُشر خزف في دليل ثيمات Obsidian: https://community.obsidian.md/themes/khazaf
 
 ## 0.2.0 — 2026-10-08
 
