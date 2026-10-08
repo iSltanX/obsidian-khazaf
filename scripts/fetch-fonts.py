@@ -34,3 +34,7 @@ for subset, body in blocks:
 
 (FONTS / "fonts.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
 print("total", sum(o["bytes"] for o in out) // 1024, "KB")
+
+# تقليص الخطوط إلى الحروف المستخدمة (يحتاج fonttools وbrotli)
+import subprocess, sys
+subprocess.run([sys.executable, str(ROOT / "scripts" / "subset-fonts.py")], check=True)

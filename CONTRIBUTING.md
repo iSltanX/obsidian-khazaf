@@ -14,7 +14,7 @@
 1. عدّل في `src/` فقط. ملف `theme.css` يُولَّد بالبناء ولا يُحرَّر يدويًا.
 2. شغّل البناء:
    ```bash
-   python3 scripts/fetch-fonts.py   # مرة واحدة
+   python3 scripts/fetch-fonts.py   # مرة واحدة (يحتاج: pip install fonttools brotli)
    python3 scripts/build.py
    ```
 3. افتح `test-vault` في Obsidian كقبو، وجرّب تعديلك في:

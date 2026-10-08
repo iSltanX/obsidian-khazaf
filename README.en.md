@@ -107,7 +107,7 @@ The theme hides the table chrome, sets each hemistich in Markazi Text and stacks
 ## Development
 
 ```bash
-python3 scripts/fetch-fonts.py        # once
+python3 scripts/fetch-fonts.py        # once: downloads and subsets fonts (needs fonttools + brotli)
 ./scripts/setup-test-plugins.sh       # once: Style Settings + Dataview in the test vault
 python3 scripts/build.py              # after every change in src/
 ```

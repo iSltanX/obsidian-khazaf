@@ -19,16 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----------------------------------------------------------------------------
-
-Bundled fonts
-
-theme.css embeds the following fonts as base64 WOFF2 data. They are NOT
-covered by the MIT license above; each remains under the SIL Open Font
-License, Version 1.1. The full license text is in fonts/OFL.txt and the
-copyright notices are in fonts/NOTICE.md.
-
-- Vazirmatn       — Copyright 2015-2023 The Vazirmatn Project Authors
-- Markazi Text    — Copyright 2016 The Markazi Text Project Authors
-- JetBrains Mono  — Copyright 2020 The JetBrains Mono Project Authors

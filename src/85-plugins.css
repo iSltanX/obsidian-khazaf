@@ -34,12 +34,6 @@
 }
 
 /* --- الطباعة وتصدير PDF --- */
-.print .callout,
-.print pre,
-.print table,
-.print .callout[data-callout="verse"] {
-  break-inside: avoid;
-}
 .print pre,
 .print pre code[class*="language-"] {
   white-space: pre-wrap;

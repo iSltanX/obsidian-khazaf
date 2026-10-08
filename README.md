@@ -8,6 +8,8 @@
 
 <p align="center">ثيم Obsidian للكتابة العربية الطويلة: سطح ضبابي، حبر أردوازي، ولمسة طين.</p>
 
+<p align="center" dir="ltr"><b>An Arabic-first Obsidian theme for long-form writing:</b> misty surfaces, slate ink and a touch of terracotta. Fully mirrored RTL, Arabic typography with embedded fonts, footnotes, poetry, alternate checkboxes, light and dark modes, and 28 Style Settings options. <a href="README.en.md">Full English documentation →</a></p>
+
 <p align="center">
   <a href="https://github.com/iSltanX/obsidian-khazaf/releases/latest"><img src="https://img.shields.io/github/v/release/iSltanX/obsidian-khazaf?label=release&color=C2552B" alt="الإصدار"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-6E8B3D" alt="الرخصة"></a>
@@ -249,7 +251,7 @@ theme.css       ناتج البناء، لا تحرّره يدويًا
 ```
 
 ```bash
-python3 scripts/fetch-fonts.py        # مرة واحدة
+python3 scripts/fetch-fonts.py        # مرة واحدة: يجلب الخطوط ويقلّصها (يحتاج fonttools وbrotli)
 ./scripts/setup-test-plugins.sh       # مرة واحدة: Style Settings وDataview في قبو التجربة
 python3 scripts/build.py              # بعد كل تعديل في src/
 ```
