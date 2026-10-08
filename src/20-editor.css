@@ -1,0 +1,264 @@
+/* ===== المتن: ما يتجاوز المتغيرات ===== */
+
+/* الاقتباس: وزن خفيف بدل المائل (العربية بلا مائل)، شريط في بداية السطر */
+.markdown-rendered blockquote,
+.cm-s-obsidian .HyperMD-quote {
+  font-weight: 300;
+}
+.markdown-rendered blockquote {
+  border-inline-start: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
+  border-left: none;
+  border-right: none;
+  padding-inline-start: var(--size-4-4);
+  margin-inline: 0;
+}
+.markdown-rendered blockquote strong,
+.cm-s-obsidian .HyperMD-quote .cm-strong {
+  font-weight: var(--bold-weight);
+}
+
+/* التظليل */
+.markdown-rendered mark,
+.cm-s-obsidian span.cm-highlight {
+  border-radius: 3px;
+  padding: 0 0.15em;
+  color: inherit;
+}
+
+/* التنبيهات: شريط 3px في بداية السطر بلون النوع */
+.callout {
+  border-inline-start: 3px solid rgb(var(--callout-color));
+  background-color: rgba(var(--callout-color), 0.10);
+}
+.theme-dark .callout {
+  background-color: rgba(var(--callout-color), 0.14);
+}
+.callout-title {
+  gap: var(--size-4-2);
+}
+.callout-title-inner {
+  font-size: var(--callout-title-size);
+}
+.callout-content {
+  padding-top: var(--size-2-2);
+}
+/* ألوان التنبيهات من اللوحة */
+.callout {
+  --callout-info: var(--color-blue-rgb);
+  --callout-tip: var(--color-cyan-rgb);
+  --callout-warning: var(--color-orange-rgb);
+  --callout-error: var(--color-red-rgb);
+  --callout-success: var(--color-green-rgb);
+  --callout-question: var(--color-yellow-rgb);
+  --callout-example: var(--color-purple-rgb);
+  --callout-quote: var(--khazaf-ink-rgb);
+  --callout-default: var(--color-blue-rgb);
+}
+.callout[data-callout="quote"] {
+  --callout-color: var(--khazaf-ink-rgb);
+}
+/* Obsidian 1.14 يلوّن العنوان بلون المتن؛ التصميم يجعله بلون النوع */
+.callout {
+  --callout-title-color: rgb(var(--callout-color));
+}
+.callout-title,
+.callout-icon {
+  color: rgb(var(--callout-color));
+}
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] {
+  --callout-icon: lucide-lightbulb;
+}
+
+/* بيت الشعر: > [!verse] يحوي جدولًا بعمودين (صدر | عجز) */
+.callout[data-callout="verse"] {
+  --callout-color: var(--khazaf-olive-rgb);
+  --callout-icon: lucide-feather;
+  background-color: rgba(var(--callout-color), 0.06);
+}
+.theme-dark .callout[data-callout="verse"] {
+  background-color: rgba(var(--callout-color), 0.09);
+}
+.callout[data-callout="verse"] .callout-content {
+  padding-top: var(--size-4-2);
+}
+.callout[data-callout="verse"] table {
+  width: 100%;
+  table-layout: fixed;
+  border: none;
+  border-collapse: collapse;
+  font-family: var(--khazaf-font-heading);
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin: 0;
+}
+.callout[data-callout="verse"] thead { display: none; }
+/* العنوان الافتراضي "Verse" لا معنى له فوق البيت */
+.callout[data-callout="verse"] > .callout-title { display: none; }
+.callout[data-callout="verse"] .callout-content { padding-top: 0; }
+.callout[data-callout="verse"] tr,
+.callout[data-callout="verse"] tbody tr:nth-child(odd),
+.callout[data-callout="verse"] tbody tr:nth-child(even) {
+  background: transparent;
+}
+.callout[data-callout="verse"] th,
+.callout[data-callout="verse"] td {
+  border: none;
+  background: transparent;
+  padding: 0.1em 0.5em;
+  width: 50%;
+  font-family: var(--khazaf-font-heading);
+  font-size: calc(var(--font-text-size) * 1.3);
+  line-height: 1.6;
+}
+.callout[data-callout="verse"] td:first-child { text-align: start; }
+.callout[data-callout="verse"] td:last-child  { text-align: end; }
+.callout[data-callout="verse"] tr:nth-child(even) td { background: transparent; }
+@media (max-width: 480px) {
+  .callout[data-callout="verse"] td { display: block; width: 100%; }
+  .callout[data-callout="verse"] td:first-child { text-align: start; }
+  .callout[data-callout="verse"] td:last-child  { text-align: start; padding-inline-start: 2.5em; margin-bottom: 0.4em; }
+}
+
+/* الحواشي */
+.markdown-rendered sup.footnote-ref {
+  font-size: 0.72em;
+  line-height: 0;
+  vertical-align: super;
+}
+.markdown-rendered sup.footnote-ref a {
+  color: var(--text-accent);
+  text-decoration: none;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+/* في المحرر يتكوّن [^1] من عدة spans؛ لا حشوة عليها كي لا تتباعد */
+.cm-s-obsidian span.cm-footref {
+  color: var(--text-accent);
+  text-decoration: none;
+}
+.markdown-rendered sup.footnote-ref a:hover {
+  background: var(--tag-background);
+}
+/* Obsidian يكتب "[1]" نصًا داخل الرابط؛ نخفيه ونعرض الرقم وحده من data-footref */
+.markdown-rendered sup.footnote-ref a.footnote-link[data-footref] {
+  font-size: 0;
+}
+.markdown-rendered sup.footnote-ref a.footnote-link[data-footref]::after {
+  content: attr(data-footref);
+  font-size: calc(var(--font-text-size) * 0.72);
+  font-weight: 600;
+}
+.markdown-rendered .footnotes {
+  margin-top: var(--size-4-8);
+  padding-top: var(--size-4-4);
+  border-top: var(--hr-thickness) solid var(--hr-color);
+  font-size: var(--footnote-size);
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+.markdown-rendered .footnotes hr { display: none; }
+.markdown-rendered .footnotes ol {
+  padding-inline-start: 1.5em;
+  margin: 0;
+}
+.markdown-rendered .footnotes li { margin-bottom: 0.4em; }
+.markdown-rendered .footnotes li::marker { color: var(--text-accent); }
+.markdown-rendered .footnotes li:target {
+  background: rgba(var(--khazaf-olive-rgb), 0.2);
+  border-radius: var(--radius-s);
+  padding-inline: 4px;
+  margin-inline: -4px;
+}
+.markdown-rendered .footnote-backref {
+  color: var(--text-accent);
+  text-decoration: none;
+  margin-inline-start: 0.35em;
+}
+
+/* الكود: LTR دائمًا حتى داخل الملاحظة العربية */
+.markdown-rendered pre,
+.markdown-rendered pre code,
+.cm-s-obsidian .HyperMD-codeblock,
+.cm-s-obsidian .cm-line.HyperMD-codeblock {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+.markdown-rendered code:not(pre code),
+.cm-s-obsidian span.cm-inline-code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  padding: 1px 5px;
+  border-radius: var(--radius-s);
+}
+.markdown-rendered pre {
+  border: var(--code-border-width) solid var(--code-border-color);
+  padding: var(--size-4-4);
+  line-height: 1.6;
+}
+/* زر النسخ وشارة اللغة يلتزمان بطرف الكود اللاتيني (يمين الكتلة) حتى في واجهة RTL — يحتاج تحققًا في التطبيق */
+.markdown-rendered button.copy-code-button,
+.cm-s-obsidian .code-block-flair {
+  right: var(--size-4-2);
+  left: auto;
+  top: var(--size-4-2);
+}
+
+/* الجداول */
+.markdown-rendered table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: var(--table-border-width) solid var(--table-border-color);
+  border-radius: var(--radius-s);
+  overflow: hidden;
+}
+.markdown-rendered th {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  font-weight: var(--table-header-weight);
+}
+.markdown-rendered tbody tr:nth-child(even) td {
+  background: var(--table-row-alt-background);
+}
+
+/* القوائم والمهام */
+.markdown-rendered ul > li::marker { color: var(--list-marker-color); }
+.markdown-rendered ol > li::marker { color: var(--text-muted); }
+.markdown-rendered .task-list-item-checkbox,
+.cm-s-obsidian .task-list-item-checkbox {
+  margin-inline-end: 0.5em;
+}
+.markdown-rendered .task-list-item.is-checked,
+.cm-s-obsidian .HyperMD-task-line[data-task="x"] {
+  color: var(--checklist-done-color);
+}
+
+/* الروابط */
+.markdown-rendered a.external-link:hover,
+.markdown-rendered a.internal-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* خط أفقي */
+.markdown-rendered hr {
+  margin: var(--size-4-6) 0;
+}
+
+/* الخصائص */
+.metadata-container {
+  --metadata-label-font-size: var(--font-ui-small);
+}
+.metadata-property-key { color: var(--text-muted); }
+
+/* الجزء المضمّن */
+.markdown-embed {
+  border-inline-start: 2px solid var(--background-modifier-border-hover);
+  border-left: none;
+  border-right: none;
+  background: var(--background-primary-alt);
+  border-radius: var(--radius-m);
+  padding-inline-start: var(--size-4-4);
+}

@@ -1,0 +1,126 @@
+/* ===== الواجهة: التبويبات والأشرطة والنوافذ ===== */
+
+/* التبويبات */
+.workspace-tab-header-inner-title {
+  font-weight: var(--tab-font-weight);
+}
+.workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--tab-text-color-focused-active-current);
+}
+
+/* الأشرطة الجانبية: رؤوس التبويبات وشجرة الملفات */
+.workspace-tab-header-container {
+  border-bottom: var(--divider-width) solid var(--divider-color);
+}
+.nav-folder-title,
+.nav-file-title {
+  border-radius: var(--radius-s);
+}
+.nav-folder-title-content {
+  font-weight: 500;
+}
+.nav-folder-children {
+  /* خط إرشاد عمودي في بداية السطر */
+  border-inline-start: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+  margin-inline-start: 14px;
+  padding-inline-start: 0;
+}
+.nav-file-title.is-active {
+  color: var(--nav-item-color-active);
+  background: var(--nav-item-background-active);
+}
+
+/* نتائج البحث */
+.search-result-file-title {
+  font-weight: 500;
+}
+.search-result-file-matched-text {
+  background: var(--text-highlight-bg);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+.search-result-file-matches {
+  padding-inline-start: 18px;
+}
+.search-result-count {
+  background: var(--background-modifier-hover);
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: var(--font-ui-smaller);
+}
+
+/* الروابط الخلفية والمخطط */
+.backlink-pane .search-result-file-title,
+.outline .tree-item-inner {
+  font-size: var(--font-ui-small);
+}
+
+/* الشريط العمودي وشريط الحالة */
+.workspace-ribbon {
+  background: var(--ribbon-background);
+}
+.status-bar {
+  border-top: var(--status-bar-border-width, 1px) solid var(--status-bar-border-color);
+}
+.status-bar-item {
+  border-radius: var(--radius-s);
+}
+
+/* النوافذ والمبدّل السريع */
+.modal,
+.prompt {
+  border-radius: var(--modal-radius);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+}
+.prompt-input {
+  font-size: var(--font-ui-medium);
+}
+.suggestion-item.is-selected {
+  background: var(--nav-item-background-active);
+  color: var(--nav-item-color-active);
+}
+.suggestion-highlight {
+  color: var(--text-accent);
+  font-weight: 600;
+}
+.prompt-instructions {
+  background: var(--background-secondary);
+  border-top: var(--divider-width) solid var(--divider-color);
+  color: var(--text-faint);
+}
+
+/* معاينة الصفحة عند التحويم */
+.hover-popover {
+  border-radius: var(--radius-l);
+  border: 1px solid var(--background-modifier-border-hover);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* الحقول والأزرار */
+input[type="text"],
+input[type="search"],
+.search-input-container input {
+  border-radius: var(--input-radius);
+}
+input[type="text"]:focus,
+input[type="search"]:focus,
+.search-input-container input:focus {
+  box-shadow: 0 0 0 2px var(--background-modifier-border-focus) inset;
+  border-color: transparent;
+}
+button.mod-cta {
+  font-weight: 500;
+}
+
+/* حلقة التركيز لعناصر لوحة المفاتيح */
+.nav-file-title:focus-visible,
+.nav-folder-title:focus-visible,
+.workspace-tab-header:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background-modifier-border-focus) inset;
+}
+
+/* شريط التمرير */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+}

@@ -1,0 +1,251 @@
+/* ===== الخطوط والأحجام والإيقاع — تعمل في الوضعين ===== */
+body {
+  /* عائلات الخطوط (Obsidian يركّب --font-text/--font-interface/--font-monospace من هذه القيم وإعدادات المستخدم) */
+  --font-text-theme: "Vazirmatn", "Noto Naskh Arabic", "Geeza Pro", "Segoe UI", sans-serif;
+  --font-interface-theme: "Vazirmatn", "SF Arabic", "Segoe UI", system-ui, sans-serif;
+  --font-monospace-theme: "JetBrains Mono", "Vazirmatn", ui-monospace, Menlo, monospace;
+  --khazaf-font-heading: "Markazi Text", "Vazirmatn", "Noto Naskh Arabic", serif;
+
+  /* أوزان */
+  --font-weight: 400;
+  --bold-weight: 600;
+  --bold-modifier: 200;
+
+  /* الإيقاع العمودي: 1.75 يمنع تصادم الحركات بين الأسطر */
+  --line-height-normal: 1.75;
+  --line-height-tight: 1.45;
+  --p-spacing: 1em;
+  --heading-spacing: 2.4em;
+
+  /* العناوين: h1–h3 بخط نسخي، h4–h6 بخط الواجهة لأن النسخي يفقد وضوحه صغيرًا */
+  --h1-font: var(--khazaf-font-heading);
+  --h2-font: var(--khazaf-font-heading);
+  --h3-font: var(--khazaf-font-heading);
+  --h4-font: var(--font-interface);
+  --h5-font: var(--font-interface);
+  --h6-font: var(--font-interface);
+  --h1-size: 2em;    --h1-weight: 700; --h1-line-height: 1.3;
+  --h2-size: 1.65em; --h2-weight: 600; --h2-line-height: 1.3;
+  --h3-size: 1.4em;  --h3-weight: 600; --h3-line-height: 1.35;
+  --h4-size: 1.125em; --h4-weight: 600; --h4-line-height: 1.4;
+  --h5-size: 1em;    --h5-weight: 600; --h5-line-height: 1.5;
+  --h6-size: 0.95em; --h6-weight: 500; --h6-line-height: 1.5;
+  --h6-color: var(--text-muted);
+
+  /* عنوان الملاحظة داخل الصفحة */
+  --inline-title-font: var(--khazaf-font-heading);
+  --inline-title-size: 1.8em;
+  --inline-title-weight: 700;
+  --inline-title-line-height: 1.3;
+
+  /* أحجام فرعية */
+  --footnote-size: 0.82em;
+  --code-size: 0.85em;
+  --code-radius: var(--radius-m);
+  --code-border-width: 1px;
+
+  /* زوايا */
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+  --radius-xl: 16px;
+  --tab-radius: 8px;
+  --callout-radius: 8px;
+  --modal-radius: var(--radius-l);
+  --input-radius: var(--radius-m);
+  --button-radius: var(--radius-m);
+
+  /* روابط: بلا خط سفلي، يظهر عند التحويم */
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+  --link-decoration-thickness: 1px;
+  --link-external-decoration: none;
+  --link-external-decoration-hover: underline;
+  --link-unresolved-decoration-style: dashed;
+  --link-unresolved-opacity: 0.85;
+
+  /* وسوم كحبّات */
+  --tag-radius: 2em;
+  --tag-padding-x: 8px;
+  --tag-padding-y: 2px;
+  --tag-size: var(--font-smaller);
+  --tag-weight: 500;
+  --tag-border-width: 0;
+
+  /* صناديق المهام */
+  --checkbox-size: 18px;
+  --checkbox-radius: 4px;
+  --checklist-done-decoration: line-through;
+
+  /* اقتباس: شريط 3px في بداية السطر، وزن خفيف بدل المائل */
+  --blockquote-border-thickness: 3px;
+  --blockquote-font-style: normal;
+
+  /* تنبيهات */
+  --callout-border-width: 0;
+  --callout-padding: 12px 16px 14px;
+  --callout-title-size: var(--font-ui-medium);
+  --callout-title-weight: 600;
+  --callout-content-padding: 0;
+
+  /* خطوط وجداول وقوائم */
+  --hr-thickness: 1px;
+  --table-border-width: 1px;
+  --table-header-weight: 500;
+  --table-cell-padding: 7px 10px;
+  --list-indent: 1.75em;
+  --list-spacing: 0.15em;
+
+  /* خصائص الملاحظة */
+  --metadata-label-width: 130px;
+
+  /* الواجهة */
+  --tab-font-size: var(--font-ui-small);
+  --tab-font-weight: 400;
+  --nav-item-padding: 4px 8px;
+  --nav-indentation-guide-width: 1px;
+  --status-bar-font-size: var(--font-ui-smaller);
+  --prompt-width: 620px;
+  --ribbon-width: 44px;
+  --file-line-width: 700px;
+  --file-margins: 32px;
+}
+
+/* ===== الوضع الفاتح: ضباب وحبر أردوازي، طين للتحديد، زيتون للاقتباس ===== */
+.theme-light {
+  --color-base-00: #F4F6F3;
+  --color-base-05: #F0F3EF;
+  --color-base-10: #EBEFE9;
+  --color-base-20: #E7ECE6;
+  --color-base-25: #DDE3DB;
+  --color-base-30: #D3DBD3;
+  --color-base-35: #C8D1C9;
+  --color-base-40: #BCC7BE;
+  --color-base-50: #86958F;
+  --color-base-60: #52635F;
+  --color-base-70: #3A4A4C;
+  --color-base-100: #1E2A2C;
+
+  --accent-h: 17;
+  --accent-s: 64%;
+  --accent-l: 46%;             /* #C2552B تراكوتا */
+
+  --color-red: #B8402F;    --color-red-rgb: 184, 64, 47;
+  --color-orange: #C76A1C; --color-orange-rgb: 199, 106, 28;
+  --color-yellow: #B2901A; --color-yellow-rgb: 178, 144, 26;
+  --color-green: #4E8A3C;  --color-green-rgb: 78, 138, 60;
+  --color-cyan: #2E8A96;   --color-cyan-rgb: 46, 138, 150;
+  --color-blue: #3468B5;   --color-blue-rgb: 52, 104, 181;
+  --color-purple: #7B55B4; --color-purple-rgb: 123, 85, 180;
+  --color-pink: #B9487E;   --color-pink-rgb: 185, 72, 126;
+
+  --khazaf-olive: #6E8B3D;
+  --khazaf-olive-rgb: 110, 139, 61;
+  --khazaf-ink-rgb: 30, 42, 44;
+
+  --text-highlight-bg: rgba(154, 166, 74, 0.35);
+  --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.22);
+  --blockquote-border-color: var(--khazaf-olive);
+  --blockquote-color: var(--color-base-70);
+  --code-background: rgba(var(--khazaf-ink-rgb), 0.06);
+  --code-border-color: var(--background-modifier-border);
+  --code-normal: #3A4A4C;
+  --code-keyword: #7A4EA8;
+  --code-string: #3E7F5A;
+  --code-function: #2A6FAF;
+  --code-comment: var(--color-base-50);
+  --background-modifier-hover: rgba(var(--khazaf-ink-rgb), 0.06);
+  --background-modifier-form-field: #FFFFFF;
+  --nav-item-background-active: rgba(var(--khazaf-ink-rgb), 0.08);
+  --table-row-alt-background: rgba(var(--khazaf-ink-rgb), 0.03);
+  --scrollbar-thumb-bg: rgba(var(--khazaf-ink-rgb), 0.18);
+  --scrollbar-active-thumb-bg: rgba(var(--khazaf-ink-rgb), 0.3);
+}
+
+/* ===== الوضع الداكن: أردواز عميق، نعناع فاتح، مرجاني للتحديد ===== */
+.theme-dark {
+  --color-base-00: #10161A;
+  --color-base-05: #131A1D;
+  --color-base-10: #151C1F;
+  --color-base-20: #1C2427;
+  --color-base-25: #212A2E;
+  --color-base-30: #27323A;
+  --color-base-35: #2E3A42;
+  --color-base-40: #344049;
+  --color-base-50: #667570;
+  --color-base-60: #9FB0A9;
+  --color-base-70: #C9D4CE;
+  --color-base-100: #E3EAE6;
+
+  --accent-h: 16;
+  --accent-s: 83%;
+  --accent-l: 65%;             /* #F0845C مرجاني */
+
+  --color-red: #E8776A;    --color-red-rgb: 232, 119, 106;
+  --color-orange: #EE9B5F; --color-orange-rgb: 238, 155, 95;
+  --color-yellow: #DDBE55; --color-yellow-rgb: 221, 190, 85;
+  --color-green: #7CC07A;  --color-green-rgb: 124, 192, 122;
+  --color-cyan: #68C2CD;   --color-cyan-rgb: 104, 194, 205;
+  --color-blue: #7FA8EE;   --color-blue-rgb: 127, 168, 238;
+  --color-purple: #B49CE8; --color-purple-rgb: 180, 156, 232;
+  --color-pink: #E491BA;   --color-pink-rgb: 228, 145, 186;
+
+  --khazaf-olive: #9DB35A;
+  --khazaf-olive-rgb: 157, 179, 90;
+  --khazaf-ink-rgb: 227, 234, 230;
+
+  --text-highlight-bg: rgba(185, 196, 90, 0.30);
+  --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.28);
+  --blockquote-border-color: var(--khazaf-olive);
+  --blockquote-color: var(--color-base-70);
+  --code-background: rgba(var(--khazaf-ink-rgb), 0.06);
+  --code-border-color: var(--background-modifier-border);
+  --code-normal: #C9D4CE;
+  --code-keyword: #B79AE0;
+  --code-string: #7FC79A;
+  --code-function: #7FB2EC;
+  --code-comment: var(--color-base-50);
+  --background-modifier-hover: rgba(var(--khazaf-ink-rgb), 0.07);
+  --background-modifier-form-field: var(--color-base-00);
+  --nav-item-background-active: rgba(var(--khazaf-ink-rgb), 0.09);
+  --table-row-alt-background: rgba(var(--khazaf-ink-rgb), 0.03);
+  --scrollbar-thumb-bg: rgba(var(--khazaf-ink-rgb), 0.18);
+  --scrollbar-active-thumb-bg: rgba(var(--khazaf-ink-rgb), 0.3);
+  --text-on-accent: #10161A;
+}
+
+/* يُغذّي اللون المميز (Obsidian يشتق --interactive-accent و --text-accent منه) */
+body {
+  --tag-background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.12);
+  --tag-color: var(--text-accent);
+  --tag-background-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+  --checkbox-color: var(--interactive-accent);
+  --checkbox-color-hover: var(--interactive-accent-hover);
+  --checkbox-border-color: var(--color-base-40);
+  --checkbox-marker-color: var(--text-on-accent);
+  --checklist-done-color: var(--text-muted);
+  --link-color: var(--text-accent);
+  --link-color-hover: var(--text-accent-hover);
+  --link-external-color: var(--text-accent);
+  --link-external-color-hover: var(--text-accent-hover);
+  --link-unresolved-color: var(--text-muted);
+  --list-marker-color: var(--text-faint);
+  --hr-color: var(--background-modifier-border);
+  --table-border-color: var(--background-modifier-border);
+  --table-header-background: var(--background-secondary);
+  --table-header-border-color: var(--background-modifier-border);
+  --nav-indentation-guide-color: var(--background-modifier-border);
+  --nav-collapse-icon-color: var(--text-faint);
+  --tab-container-background: var(--background-secondary);
+  --tab-background-active: var(--background-primary);
+  --tab-text-color: var(--text-muted);
+  --tab-text-color-focused-active-current: var(--text-normal);
+  --ribbon-background: var(--background-secondary);
+  --status-bar-background: var(--background-secondary);
+  --status-bar-text-color: var(--text-muted);
+  --status-bar-border-color: var(--divider-color);
+  --titlebar-background: var(--background-secondary);
+  --prompt-border-color: var(--background-modifier-border-hover);
+  --modal-border-color: var(--background-modifier-border-hover);
+  --background-modifier-border-focus: var(--interactive-accent);
+}

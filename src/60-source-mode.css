@@ -1,0 +1,52 @@
+/* ===== وضع المصدر والمعاينة الحية: رموز التنسيق خافتة، المحتوى بلونه ===== */
+.cm-s-obsidian span.cm-formatting,
+.cm-s-obsidian span.cm-formatting-header,
+.cm-s-obsidian span.cm-formatting-quote,
+.cm-s-obsidian span.cm-formatting-list,
+.cm-s-obsidian span.cm-formatting-code,
+.cm-s-obsidian span.cm-formatting-link,
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-formatting-strong,
+.cm-s-obsidian span.cm-formatting-em,
+.cm-s-obsidian .cm-hmd-frontmatter.cm-def,
+.cm-s-obsidian span.cm-hr {
+  color: var(--text-faint);
+}
+.cm-s-obsidian .cm-hmd-frontmatter {
+  color: var(--text-muted);
+  font-family: var(--font-text);
+}
+.cm-s-obsidian span.cm-hmd-internal-link,
+.cm-s-obsidian span.cm-link {
+  color: var(--link-color);
+}
+.cm-s-obsidian span.cm-url {
+  color: var(--text-faint);
+}
+.cm-s-obsidian span.cm-hashtag {
+  color: var(--tag-color);
+}
+.cm-s-obsidian span.cm-footref {
+  font-size: var(--font-smaller);
+}
+.cm-s-obsidian span.cm-inline-code {
+  font-size: var(--code-size);
+}
+.cm-s-obsidian .HyperMD-codeblock {
+  font-size: var(--code-size);
+  line-height: 1.6;
+}
+.cm-s-obsidian .cm-header-1,
+.cm-s-obsidian .cm-header-2,
+.cm-s-obsidian .cm-header-3 {
+  font-family: var(--khazaf-font-heading);
+}
+.cm-s-obsidian .cm-hmd-callout.cm-formatting {
+  color: var(--text-faint);
+}
+/* مؤشر الكتابة بلون التمييز */
+.cm-s-obsidian .cm-cursor,
+.cm-s-obsidian .cm-cursor-primary {
+  border-left-color: var(--interactive-accent);
+  border-left-width: 2px;
+}

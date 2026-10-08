@@ -1,0 +1,51 @@
+/* ===== الهاتف ===== */
+.is-mobile {
+  --file-margins: 20px;
+  --nav-item-padding: 8px 10px;
+}
+.is-mobile .nav-file-title,
+.is-mobile .nav-folder-title {
+  min-height: 36px;
+  font-size: 15px;
+  align-items: center;
+}
+.is-mobile .view-header-title {
+  font-weight: 600;
+}
+.is-mobile .mobile-toolbar {
+  background: var(--background-secondary);
+  border-top: var(--divider-width) solid var(--divider-color);
+}
+.is-mobile .mobile-toolbar-option.is-active {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+  border-radius: var(--radius-s);
+}
+.is-mobile .markdown-rendered pre {
+  padding: var(--size-4-3);
+}
+.is-mobile {
+  --table-text-size: var(--font-smaller);
+}
+
+/* Obsidian يفرض أسود خالصًا (#000) على الهاتف الداكن عبر .is-mobile.theme-dark؛ نعيد الأردواز بالمحدد نفسه */
+.is-mobile.theme-dark {
+  --color-base-00: #10161A;
+  --color-base-10: #151C1F;
+  --color-base-20: #1C2427;
+}
+.is-mobile.theme-light {
+  --color-base-100: #1E2A2C;
+}
+
+/* الكود على الهاتف: تمرير أفقي بدل التفاف يكسر المسارات مثل 02-Projects */
+.is-mobile {
+  --code-white-space: pre;
+}
+.is-mobile .markdown-rendered pre {
+  overflow-x: auto;
+}
+/* Obsidian يضع white-space: pre-wrap مباشرة على code[class*="language-"] */
+.is-mobile .markdown-rendered pre code[class*="language-"] {
+  white-space: var(--code-white-space);
+}

@@ -1,0 +1,32 @@
+/* ===== RTL: Obsidian يعكس الواجهة عبر body.mod-rtl، وهنا فقط ما لا تغطيه الخصائص المنطقية ===== */
+
+/* الكود يبقى LTR مهما كان اتجاه الواجهة */
+body.mod-rtl .markdown-rendered pre,
+body.mod-rtl .cm-s-obsidian .HyperMD-codeblock {
+  direction: ltr;
+  text-align: left;
+}
+
+/* قائمة الحواشي تتبع اتجاه الملاحظة لا اتجاه الواجهة */
+.markdown-rendered .footnotes {
+  direction: inherit;
+}
+
+/* الأرقام والتواريخ اللاتينية داخل الخصائص */
+.metadata-input-longtext,
+.metadata-input-number,
+.metadata-input[type="date"] {
+  unicode-bidi: plaintext;
+}
+
+/* أيقونة الرابط الخارجي تُرسم من Obsidian بعد النص؛ نكتفي بمسافة منطقية */
+.markdown-rendered a.external-link {
+  padding-inline-end: 16px;
+}
+
+/* أيقونات لا تُعكس في RTL (علامات الصح والإغلاق) */
+body.mod-rtl .task-list-item-checkbox,
+body.mod-rtl .workspace-tab-header-inner-close-button svg,
+body.mod-rtl .search-input-clear-button svg {
+  transform: none;
+}
