@@ -3,3 +3,5 @@ test-vault/.obsidian/workspace*.json
 test-vault/.obsidian/themes/
 test-vault/.obsidian/cache
 node_modules/
+test-vault/.obsidian/plugins/
+test-vault/.obsidian/community-plugins.json

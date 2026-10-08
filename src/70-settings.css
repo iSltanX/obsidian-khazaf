@@ -1,0 +1,350 @@
+/* @settings
+
+name: Khazaf · خزف
+id: khazaf
+settings:
+    -
+        id: khazaf-info
+        title: About these settings
+        title.ar: عن هذه الإعدادات
+        description: "Every option is optional. The theme works fully without Style Settings."
+        description.ar: "كل خيار هنا اختياري. الثيم يعمل كاملًا بدون هذه الإضافة."
+        type: info-text
+        markdown: true
+
+    -
+        id: khazaf-h-colors
+        title: Colors
+        title.ar: الألوان
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: khazaf-scheme
+        title: Color scheme
+        title.ar: اللوحة
+        description: "Sage & Terracotta (default) or Paper & Indigo."
+        description.ar: "مريمية وطين (الافتراضية) أو ورق ونيلة."
+        type: class-select
+        allowEmpty: false
+        default: khazaf-scheme-sage
+        options:
+            -
+                label: مريمية وطين · Sage & Terracotta
+                value: khazaf-scheme-sage
+            -
+                label: ورق ونيلة · Paper & Indigo
+                value: khazaf-scheme-paper
+    -
+        id: accent
+        title: Accent color
+        title.ar: لون التمييز
+        description: "Links, selection, active items and footnote references. Overrides the scheme's accent."
+        description.ar: "الروابط والتحديد والعنصر النشط ومرجع الحاشية. يتقدّم على لون اللوحة."
+        type: variable-themed-color
+        format: hsl-split
+        opacity: false
+        default-light: '#C2552B'
+        default-dark: '#F0845C'
+    -
+        id: khazaf-olive-rgb
+        title: Quote color
+        title.ar: لون الاقتباس
+        description: "Blockquote bar, poetry callout and tag dots in the graph."
+        description.ar: "شريط الاقتباس، وتنبيه الشعر، ووسوم مخطط الروابط."
+        type: variable-themed-color
+        format: rgb-values
+        opacity: false
+        default-light: '#6E8B3D'
+        default-dark: '#9DB35A'
+    -
+        id: khazaf-highlight-rgb
+        title: Highlight color
+        title.ar: لون التظليل
+        description: "Background of ==highlighted== text and search matches."
+        description.ar: "خلفية النص المظلّل ==هكذا== ونتائج البحث."
+        type: variable-themed-color
+        format: rgb-values
+        opacity: false
+        default-light: '#9AA64A'
+        default-dark: '#B9C45A'
+    -
+        id: khazaf-high-contrast
+        title: Higher contrast
+        title.ar: تباين أعلى
+        description: "Darker secondary text and stronger borders."
+        description.ar: "نص ثانوي أغمق وحدود أوضح."
+        type: class-toggle
+    -
+        id: khazaf-flat-sidebars
+        title: Sidebars match the note background
+        title.ar: الأشرطة بلون المتن
+        description: "One surface for the whole window."
+        description.ar: "سطح واحد للنافذة كلها."
+        type: class-toggle
+
+    -
+        id: khazaf-h-type
+        title: Typography
+        title.ar: الخطوط والقراءة
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: khazaf-body-font
+        title: Body font
+        title.ar: خط المتن
+        description: "A font chosen in Settings › Appearance always takes priority."
+        description.ar: "الخط الذي تختاره من الإعدادات ← المظهر يتقدّم دائمًا."
+        type: class-select
+        allowEmpty: false
+        default: khazaf-body-vazirmatn
+        options:
+            -
+                label: Vazirmatn
+                value: khazaf-body-vazirmatn
+            -
+                label: خط النظام · System font
+                value: khazaf-body-system
+    -
+        id: khazaf-heading-font
+        title: Heading font (H1–H3)
+        title.ar: خط العناوين الكبرى
+        type: class-select
+        allowEmpty: false
+        default: khazaf-heading-markazi
+        options:
+            -
+                label: Markazi Text (نسخي)
+                value: khazaf-heading-markazi
+            -
+                label: خط المتن · Body font
+                value: khazaf-heading-body
+    -
+        id: file-line-width
+        title: Line width
+        title.ar: عرض السطر
+        description: "Needs Settings › Editor › Readable line length."
+        description.ar: "يحتاج تفعيل: الإعدادات ← المحرر ← طول السطر المقروء."
+        type: variable-number-slider
+        default: 700
+        min: 560
+        max: 1000
+        step: 20
+        format: px
+    -
+        id: line-height-normal
+        title: Line height
+        title.ar: تباعد الأسطر
+        description: "Below 1.6, Arabic diacritics may touch between lines."
+        description.ar: "تحت 1.6 قد تتلامس الحركات بين الأسطر."
+        type: variable-number-slider
+        default: 1.75
+        min: 1.5
+        max: 2.1
+        step: 0.05
+    -
+        id: p-spacing
+        title: Paragraph spacing
+        title.ar: تباعد الفقرات
+        type: variable-number-slider
+        default: 1
+        min: 0.25
+        max: 2
+        step: 0.25
+        format: em
+    -
+        id: khazaf-ol-arabic-indic
+        title: Arabic-Indic numbers in ordered lists
+        title.ar: الأرقام العربية الهندية في القوائم المرقّمة
+        description: "١، ٢، ٣ in Reading view. The editor keeps the digits you type."
+        description.ar: "١، ٢، ٣ في وضع القراءة. المحرر يُبقي الأرقام كما كتبتها."
+        type: class-toggle
+
+    -
+        id: khazaf-h-blocks
+        title: Blocks
+        title.ar: عناصر المتن
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: khazaf-callout-style
+        title: Callout style
+        title.ar: شكل التنبيه
+        type: class-select
+        allowEmpty: false
+        default: khazaf-callout-bar
+        options:
+            -
+                label: شريط في بداية السطر · Side bar
+                value: khazaf-callout-bar
+            -
+                label: إطار كامل · Outline
+                value: khazaf-callout-outline
+            -
+                label: خلفية فقط · Soft
+                value: khazaf-callout-soft
+    -
+        id: khazaf-quote-style
+        title: Blockquote style
+        title.ar: شكل الاقتباس
+        type: class-select
+        allowEmpty: false
+        default: khazaf-quote-light
+        options:
+            -
+                label: خفيف · Light
+                value: khazaf-quote-light
+            -
+                label: نسخي · Naskh
+                value: khazaf-quote-naskh
+            -
+                label: عادي · Regular
+                value: khazaf-quote-regular
+    -
+        id: khazaf-footnote-brackets
+        title: Brackets around footnote numbers
+        title.ar: أقواس حول رقم الحاشية
+        description: "Show [1] instead of 1."
+        description.ar: "يُظهر [1] بدل 1."
+        type: class-toggle
+    -
+        id: footnote-size
+        title: Footnote size
+        title.ar: حجم خط الحواشي
+        type: variable-number-slider
+        default: 0.82
+        min: 0.7
+        max: 1
+        step: 0.02
+        format: em
+    -
+        id: khazaf-verse-size
+        title: Poetry size
+        title.ar: حجم بيت الشعر
+        description: "Relative to the body font size."
+        description.ar: "نسبة إلى حجم خط المتن."
+        type: variable-number-slider
+        default: 1.3
+        min: 1
+        max: 1.7
+        step: 0.05
+    -
+        id: khazaf-colored-headings
+        title: Accent-colored headings
+        title.ar: عناوين بلون التمييز
+        type: class-toggle
+    -
+        id: khazaf-classic-checkboxes
+        title: Plain checkboxes only
+        title.ar: صناديق مهام عادية فقط
+        description: "Turns off the alternate checkboxes: [/] in progress · [-] cancelled · [>] deferred · [!] important · [?] question · [*] star"
+        description.ar: "يوقف الصناديق البديلة: [/] قيد التنفيذ · [-] ملغاة · [>] مؤجلة · [!] مهمة · [?] سؤال · [*] مميزة"
+        type: class-toggle
+    -
+        id: khazaf-code-wrap
+        title: Wrap long code lines
+        title.ar: التفاف أسطر الكود الطويلة
+        description: "By default long lines scroll horizontally."
+        description.ar: "افتراضيًا تتمرّر الأسطر الطويلة أفقيًا."
+        type: class-toggle
+
+    -
+        id: khazaf-h-ui
+        title: Interface
+        title.ar: الواجهة
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: khazaf-hide-indent-guides
+        title: Hide file tree guides
+        title.ar: إخفاء خطوط الإرشاد في شجرة الملفات
+        type: class-toggle
+    -
+        id: khazaf-hide-properties-heading
+        title: Hide the "Properties" heading
+        title.ar: إخفاء عنوان «الخصائص»
+        type: class-toggle
+    -
+        id: khazaf-hide-status-bar
+        title: Hide the status bar
+        title.ar: إخفاء شريط الحالة
+        type: class-toggle
+        addCommand: true
+
+*/
+
+/* ===== تنفيذ الخيارات ===== */
+
+/* خط المتن */
+body.khazaf-body-system {
+  --font-text-theme: var(--font-default);
+}
+
+/* خط العناوين */
+body.khazaf-heading-body {
+  --khazaf-font-heading: var(--font-text);
+}
+
+/* القوائم المرقّمة بالأرقام العربية الهندية */
+body.khazaf-ol-arabic-indic .markdown-rendered ol {
+  list-style-type: arabic-indic;
+}
+
+/* شكل التنبيه */
+body.khazaf-callout-outline .callout {
+  border: 1px solid rgba(var(--callout-color), 0.4);
+}
+body.khazaf-callout-soft .callout {
+  border-inline-start: none;
+}
+
+/* شكل الاقتباس */
+body.khazaf-quote-naskh .markdown-rendered blockquote,
+body.khazaf-quote-naskh .cm-s-obsidian .HyperMD-quote {
+  font-family: var(--khazaf-font-verse);
+  font-size: 1.18em;
+  font-weight: 400;
+  line-height: 1.6;
+}
+body.khazaf-quote-regular .markdown-rendered blockquote,
+body.khazaf-quote-regular .cm-s-obsidian .HyperMD-quote {
+  font-weight: var(--font-weight);
+}
+
+/* أقواس الحاشية: نعيد النص الأصلي [1] الذي يكتبه Obsidian */
+body.khazaf-footnote-brackets .markdown-rendered sup.footnote-ref a.footnote-link[data-footref] {
+  font-size: inherit;
+}
+body.khazaf-footnote-brackets .markdown-rendered sup.footnote-ref a.footnote-link[data-footref]::after {
+  content: none;
+}
+
+/* عناوين بلون التمييز */
+body.khazaf-colored-headings {
+  --h1-color: var(--text-accent);
+  --h2-color: var(--text-accent);
+  --h3-color: var(--text-accent);
+  --inline-title-color: var(--text-normal);
+}
+
+/* التفاف الكود (على الحاسب والهاتف) */
+body.khazaf-code-wrap {
+  --code-white-space: pre-wrap;
+}
+body.khazaf-code-wrap .markdown-rendered pre code[class*="language-"] {
+  white-space: pre-wrap;
+}
+
+/* الواجهة */
+body.khazaf-hide-indent-guides {
+  --nav-indentation-guide-color: transparent;
+}
+body.khazaf-hide-properties-heading .metadata-properties-heading {
+  display: none;
+}
+body.khazaf-hide-status-bar .status-bar {
+  display: none;
+}

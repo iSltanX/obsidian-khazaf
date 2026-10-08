@@ -1,0 +1,100 @@
+/* ===== صناديق المهام البديلة: تعمل دائمًا، ويوقفها الصنف khazaf-classic-checkboxes من Style Settings =====
+   - [/] قيد التنفيذ  - [-] ملغاة  - [>] مؤجلة  - [!] مهمة  - [?] سؤال  - [*] مميزة
+   الأيقونات أقنعة SVG مضمّنة (data URI)، لا تحمّل شيئًا من الشبكة.
+   */
+
+body {
+  --khazaf-task-icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M6 12h12'/%3E%3C/svg%3E");
+  --khazaf-task-icon-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h13'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E");
+  --khazaf-task-icon-bang: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round'%3E%3Cpath d='M12 5v9'/%3E%3Cpath d='M12 19.5h.01'/%3E%3C/svg%3E");
+  --khazaf-task-icon-question: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.5 8.5a3.5 3.5 0 1 1 5 3.2c-.9.4-1.5 1.2-1.5 2.2v.6'/%3E%3Cpath d='M12 19h.01'/%3E%3C/svg%3E");
+  --khazaf-task-icon-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M12 3.2l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.6l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z'/%3E%3C/svg%3E");
+}
+
+/* الصندوق نفسه: في المحرر يحمل الصندوق data-task، وفي القراءة يحمله عنصر القائمة li */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="-"], li[data-task="-"] > input.task-list-item-checkbox, li[data-task="-"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="!"], li[data-task="!"] > input.task-list-item-checkbox, li[data-task="!"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="?"], li[data-task="?"] > input.task-list-item-checkbox, li[data-task="?"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="*"], li[data-task="*"] > input.task-list-item-checkbox, li[data-task="*"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--checkbox-color);
+  background-color: var(--khazaf-task-color);
+  border-color: var(--khazaf-task-color);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="-"], li[data-task="-"] > input.task-list-item-checkbox, li[data-task="-"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="!"], li[data-task="!"] > input.task-list-item-checkbox, li[data-task="!"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="?"], li[data-task="?"] > input.task-list-item-checkbox, li[data-task="?"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="*"], li[data-task="*"] > input.task-list-item-checkbox, li[data-task="*"] > p > input.task-list-item-checkbox)::after {
+  mask-size: 72%;
+  mask-position: 50% 50%;
+}
+
+/* [/] قيد التنفيذ: نصف ممتلئ من بداية السطر */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox) {
+  background: linear-gradient(to left, var(--checkbox-color) 50%, var(--background-modifier-form-field) 50%);
+  border-color: var(--checkbox-color);
+}
+body:not(.mod-rtl):not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox) {
+  background: linear-gradient(to right, var(--checkbox-color) 50%, var(--background-modifier-form-field) 50%);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox)::after {
+  display: none;
+}
+
+/* [-] ملغاة */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="-"], li[data-task="-"] > input.task-list-item-checkbox, li[data-task="-"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--text-faint);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="-"], li[data-task="-"] > input.task-list-item-checkbox, li[data-task="-"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-minus);
+}
+body:not(.khazaf-classic-checkboxes) .markdown-rendered li[data-task="-"],
+body:not(.khazaf-classic-checkboxes) .HyperMD-task-line[data-task="-"] {
+  color: var(--text-faint);
+  text-decoration: line-through;
+}
+
+/* [>] مؤجلة: السهم يتجه مع اتجاه الكتابة */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--color-blue);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-arrow);
+}
+body.mod-rtl:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox)::after {
+  transform: scaleX(-1);
+}
+
+/* [!] مهمة */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="!"], li[data-task="!"] > input.task-list-item-checkbox, li[data-task="!"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--color-red);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="!"], li[data-task="!"] > input.task-list-item-checkbox, li[data-task="!"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-bang);
+}
+
+/* [?] سؤال */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="?"], li[data-task="?"] > input.task-list-item-checkbox, li[data-task="?"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--color-yellow);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="?"], li[data-task="?"] > input.task-list-item-checkbox, li[data-task="?"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-question);
+}
+
+/* [*] مميزة */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="*"], li[data-task="*"] > input.task-list-item-checkbox, li[data-task="*"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--color-orange);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="*"], li[data-task="*"] > input.task-list-item-checkbox, li[data-task="*"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-star);
+}
+
+/* المهام البديلة لا تُشطب كأنها منجزة، عدا الملغاة */
+body:not(.khazaf-classic-checkboxes) .markdown-rendered li.task-list-item.is-checked:is([data-task="/"], [data-task=">"], [data-task="!"], [data-task="?"], [data-task="*"]),
+body:not(.khazaf-classic-checkboxes) .HyperMD-task-line:is([data-task="/"], [data-task=">"], [data-task="!"], [data-task="?"], [data-task="*"]) {
+  color: var(--text-normal);
+  text-decoration: none;
+}

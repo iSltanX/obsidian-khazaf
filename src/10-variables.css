@@ -121,10 +121,10 @@ body {
   --color-base-30: #D3DBD3;
   --color-base-35: #C8D1C9;
   --color-base-40: #BCC7BE;
-  --color-base-50: #86958F;
-  --color-base-60: #52635F;
-  --color-base-70: #3A4A4C;
-  --color-base-100: #1E2A2C;
+  --color-base-50: #86958F;   /* --text-faint */
+  --color-base-60: #6B7A75;
+  --color-base-70: #52635F;   /* --text-muted */
+  --color-base-100: #1E2A2C;  /* --text-normal */
 
   --accent-h: 17;
   --accent-s: 64%;
@@ -139,14 +139,12 @@ body {
   --color-purple: #7B55B4; --color-purple-rgb: 123, 85, 180;
   --color-pink: #B9487E;   --color-pink-rgb: 185, 72, 126;
 
-  --khazaf-olive: #6E8B3D;
-  --khazaf-olive-rgb: 110, 139, 61;
+  --khazaf-olive-rgb: 110, 139, 61;       /* #6E8B3D */
+  --khazaf-highlight-rgb: 154, 166, 74;   /* #9AA64A */
+  --khazaf-highlight-alpha: 0.35;
   --khazaf-ink-rgb: 30, 42, 44;
 
-  --text-highlight-bg: rgba(154, 166, 74, 0.35);
   --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.22);
-  --blockquote-border-color: var(--khazaf-olive);
-  --blockquote-color: var(--color-base-70);
   --code-background: rgba(var(--khazaf-ink-rgb), 0.06);
   --code-border-color: var(--background-modifier-border);
   --code-normal: #3A4A4C;
@@ -164,18 +162,18 @@ body {
 
 /* ===== الوضع الداكن: أردواز عميق، نعناع فاتح، مرجاني للتحديد ===== */
 .theme-dark {
-  --color-base-00: #10161A;
+  --color-base-00: #151C1F;   /* --background-primary */
   --color-base-05: #131A1D;
-  --color-base-10: #151C1F;
-  --color-base-20: #1C2427;
-  --color-base-25: #212A2E;
-  --color-base-30: #27323A;
+  --color-base-10: #1A2226;   /* --background-primary-alt */
+  --color-base-20: #10161A;   /* --background-secondary: الأشرطة أغمق من المتن */
+  --color-base-25: #1C2427;
+  --color-base-30: #27323A;   /* --background-modifier-border */
   --color-base-35: #2E3A42;
   --color-base-40: #344049;
-  --color-base-50: #667570;
-  --color-base-60: #9FB0A9;
-  --color-base-70: #C9D4CE;
-  --color-base-100: #E3EAE6;
+  --color-base-50: #667570;   /* --text-faint */
+  --color-base-60: #84948E;
+  --color-base-70: #9FB0A9;   /* --text-muted */
+  --color-base-100: #E3EAE6;  /* --text-normal */
 
   --accent-h: 16;
   --accent-s: 83%;
@@ -190,14 +188,12 @@ body {
   --color-purple: #B49CE8; --color-purple-rgb: 180, 156, 232;
   --color-pink: #E491BA;   --color-pink-rgb: 228, 145, 186;
 
-  --khazaf-olive: #9DB35A;
-  --khazaf-olive-rgb: 157, 179, 90;
+  --khazaf-olive-rgb: 157, 179, 90;      /* #9DB35A */
+  --khazaf-highlight-rgb: 185, 196, 90;   /* #B9C45A */
+  --khazaf-highlight-alpha: 0.30;
   --khazaf-ink-rgb: 227, 234, 230;
 
-  --text-highlight-bg: rgba(185, 196, 90, 0.30);
   --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.28);
-  --blockquote-border-color: var(--khazaf-olive);
-  --blockquote-color: var(--color-base-70);
   --code-background: rgba(var(--khazaf-ink-rgb), 0.06);
   --code-border-color: var(--background-modifier-border);
   --code-normal: #C9D4CE;
@@ -216,6 +212,14 @@ body {
 
 /* يُغذّي اللون المميز (Obsidian يشتق --interactive-accent و --text-accent منه) */
 body {
+  --text-highlight-bg: rgba(var(--khazaf-highlight-rgb), var(--khazaf-highlight-alpha));
+  --blockquote-border-color: rgb(var(--khazaf-olive-rgb));
+  --blockquote-color: var(--color-base-70);
+  --khazaf-font-verse: "Markazi Text", "Vazirmatn", serif;
+  --khazaf-verse-size: 1.3;
+  --graph-node-tag: rgb(var(--khazaf-olive-rgb));
+  --graph-node-attachment: var(--color-cyan);
+  --graph-node-unresolved: var(--text-faint);
   --tag-background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.12);
   --tag-color: var(--text-accent);
   --tag-background-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);

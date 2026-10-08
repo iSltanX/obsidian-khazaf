@@ -30,9 +30,9 @@
 
 /* Obsidian يفرض أسود خالصًا (#000) على الهاتف الداكن عبر .is-mobile.theme-dark؛ نعيد الأردواز بالمحدد نفسه */
 .is-mobile.theme-dark {
-  --color-base-00: #10161A;
-  --color-base-10: #151C1F;
-  --color-base-20: #1C2427;
+  --color-base-00: #151C1F;
+  --color-base-10: #1A2226;
+  --color-base-20: #10161A;
 }
 .is-mobile.theme-light {
   --color-base-100: #1E2A2C;

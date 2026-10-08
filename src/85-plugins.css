@@ -1,0 +1,49 @@
+/* ===== دعم الإضافات ===== */
+
+/* --- Dataview: الجداول تأخذ تنسيق جداول الثيم، والحقول المضمّنة كحبّات --- */
+.markdown-rendered table.dataview th,
+.markdown-rendered .table-view-table th {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  font-weight: var(--table-header-weight);
+}
+.markdown-rendered .table-view-table > thead > tr > th {
+  border-bottom: var(--table-border-width) solid var(--table-border-color);
+}
+.dataview.small-text,
+.dataview .small-text {
+  color: var(--text-faint);
+}
+.dataview.inline-field-key {
+  background: var(--tag-background);
+  color: var(--tag-color);
+  border-radius: var(--radius-s);
+  padding: 0 0.4em;
+  font-size: var(--font-smaller);
+}
+.dataview.inline-field-value {
+  background: var(--background-modifier-hover);
+  border-radius: var(--radius-s);
+  padding: 0 0.4em;
+  font-size: var(--font-smaller);
+}
+
+/* --- Style Settings: عناوين المجموعات بخط الواجهة الثقيل --- */
+.style-settings-heading .setting-item-name {
+  font-weight: 600;
+}
+
+/* --- الطباعة وتصدير PDF --- */
+.print .callout,
+.print pre,
+.print table,
+.print .callout[data-callout="verse"] {
+  break-inside: avoid;
+}
+.print pre,
+.print pre code[class*="language-"] {
+  white-space: pre-wrap;
+}
+.print .markdown-rendered .footnotes li:target {
+  background: none;
+}

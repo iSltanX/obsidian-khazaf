@@ -7,7 +7,9 @@ const PORT = process.env.CDP_PORT || 9222;
 const [cmd, ...args] = process.argv.slice(2);
 
 const targets = await (await fetch(`http://127.0.0.1:${PORT}/json`)).json();
-const page = targets.find(t => t.type === "page" && /app:\/\/obsidian\.md\/index\.html/.test(t.url)) || targets.find(t => t.type === "page");
+// CDP_TITLE يختار نافذة بجزء من عنوانها (مثل نافذة الإعدادات المستقلة في Obsidian 1.14)
+const byTitle = process.env.CDP_TITLE && targets.find(t => t.type === "page" && (t.title || "").includes(process.env.CDP_TITLE));
+const page = byTitle || targets.find(t => t.type === "page" && /app:\/\/obsidian\.md\/index\.html/.test(t.url)) || targets.find(t => t.type === "page");
 if (!page) { console.error("no page target", targets.map(t => t.url)); process.exit(1); }
 
 const ws = new WebSocket(page.webSocketDebuggerUrl);

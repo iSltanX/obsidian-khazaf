@@ -1,5 +1,5 @@
 /* ============================================================
-   Khazaf — خَزَف · Arabic-first Obsidian theme   v0.1.0
+   Khazaf — خَزَف · Arabic-first Obsidian theme   v0.2.0
    مريمية وطين: أسطح ضبابية باردة، حبر أردوازي، لمسة طينية للتحديد.
    مبني من src/*.css بواسطة scripts/build.py — لا تحرّر هذا الملف يدويًا.
    الخطوط المضمّنة: Vazirmatn، Markazi Text، JetBrains Mono (SIL OFL 1.1، انظر fonts/OFL.txt)
@@ -172,10 +172,10 @@ body {
   --color-base-30: #D3DBD3;
   --color-base-35: #C8D1C9;
   --color-base-40: #BCC7BE;
-  --color-base-50: #86958F;
-  --color-base-60: #52635F;
-  --color-base-70: #3A4A4C;
-  --color-base-100: #1E2A2C;
+  --color-base-50: #86958F;   /* --text-faint */
+  --color-base-60: #6B7A75;
+  --color-base-70: #52635F;   /* --text-muted */
+  --color-base-100: #1E2A2C;  /* --text-normal */
 
   --accent-h: 17;
   --accent-s: 64%;
@@ -190,14 +190,12 @@ body {
   --color-purple: #7B55B4; --color-purple-rgb: 123, 85, 180;
   --color-pink: #B9487E;   --color-pink-rgb: 185, 72, 126;
 
-  --khazaf-olive: #6E8B3D;
-  --khazaf-olive-rgb: 110, 139, 61;
+  --khazaf-olive-rgb: 110, 139, 61;       /* #6E8B3D */
+  --khazaf-highlight-rgb: 154, 166, 74;   /* #9AA64A */
+  --khazaf-highlight-alpha: 0.35;
   --khazaf-ink-rgb: 30, 42, 44;
 
-  --text-highlight-bg: rgba(154, 166, 74, 0.35);
   --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.22);
-  --blockquote-border-color: var(--khazaf-olive);
-  --blockquote-color: var(--color-base-70);
   --code-background: rgba(var(--khazaf-ink-rgb), 0.06);
   --code-border-color: var(--background-modifier-border);
   --code-normal: #3A4A4C;
@@ -215,18 +213,18 @@ body {
 
 /* ===== الوضع الداكن: أردواز عميق، نعناع فاتح، مرجاني للتحديد ===== */
 .theme-dark {
-  --color-base-00: #10161A;
+  --color-base-00: #151C1F;   /* --background-primary */
   --color-base-05: #131A1D;
-  --color-base-10: #151C1F;
-  --color-base-20: #1C2427;
-  --color-base-25: #212A2E;
-  --color-base-30: #27323A;
+  --color-base-10: #1A2226;   /* --background-primary-alt */
+  --color-base-20: #10161A;   /* --background-secondary: الأشرطة أغمق من المتن */
+  --color-base-25: #1C2427;
+  --color-base-30: #27323A;   /* --background-modifier-border */
   --color-base-35: #2E3A42;
   --color-base-40: #344049;
-  --color-base-50: #667570;
-  --color-base-60: #9FB0A9;
-  --color-base-70: #C9D4CE;
-  --color-base-100: #E3EAE6;
+  --color-base-50: #667570;   /* --text-faint */
+  --color-base-60: #84948E;
+  --color-base-70: #9FB0A9;   /* --text-muted */
+  --color-base-100: #E3EAE6;  /* --text-normal */
 
   --accent-h: 16;
   --accent-s: 83%;
@@ -241,14 +239,12 @@ body {
   --color-purple: #B49CE8; --color-purple-rgb: 180, 156, 232;
   --color-pink: #E491BA;   --color-pink-rgb: 228, 145, 186;
 
-  --khazaf-olive: #9DB35A;
-  --khazaf-olive-rgb: 157, 179, 90;
+  --khazaf-olive-rgb: 157, 179, 90;      /* #9DB35A */
+  --khazaf-highlight-rgb: 185, 196, 90;   /* #B9C45A */
+  --khazaf-highlight-alpha: 0.30;
   --khazaf-ink-rgb: 227, 234, 230;
 
-  --text-highlight-bg: rgba(185, 196, 90, 0.30);
   --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.28);
-  --blockquote-border-color: var(--khazaf-olive);
-  --blockquote-color: var(--color-base-70);
   --code-background: rgba(var(--khazaf-ink-rgb), 0.06);
   --code-border-color: var(--background-modifier-border);
   --code-normal: #C9D4CE;
@@ -267,6 +263,14 @@ body {
 
 /* يُغذّي اللون المميز (Obsidian يشتق --interactive-accent و --text-accent منه) */
 body {
+  --text-highlight-bg: rgba(var(--khazaf-highlight-rgb), var(--khazaf-highlight-alpha));
+  --blockquote-border-color: rgb(var(--khazaf-olive-rgb));
+  --blockquote-color: var(--color-base-70);
+  --khazaf-font-verse: "Markazi Text", "Vazirmatn", serif;
+  --khazaf-verse-size: 1.3;
+  --graph-node-tag: rgb(var(--khazaf-olive-rgb));
+  --graph-node-attachment: var(--color-cyan);
+  --graph-node-unresolved: var(--text-faint);
   --tag-background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.12);
   --tag-color: var(--text-accent);
   --tag-background-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
@@ -302,6 +306,92 @@ body {
 }
 
 
+/* ---------- 15-schemes ---------- */
+/* ===== لوحات بديلة تُختار من Style Settings (khazaf-scheme) =====
+   الافتراضية «مريمية وطين» معرّفة في 10-variables.css ولا تحتاج صنفًا.
+   لون التمييز ولون الاقتباس والتظليل إن غيّرها المستخدم من الإعدادات تتقدّم على اللوحة. */
+
+/* ---------- ورق ونيلة: اللوحة الأولى من التصميم ---------- */
+.theme-light.khazaf-scheme-paper {
+  --color-base-00: #FCFBF8;
+  --color-base-05: #F9F7F2;
+  --color-base-10: #F6F3EC;
+  --color-base-20: #F6F3EC;
+  --color-base-25: #EFEBE2;
+  --color-base-30: #E4DED3;
+  --color-base-35: #D2CBBE;
+  --color-base-40: #C2BAAB;
+  --color-base-50: #9B9386;
+  --color-base-60: #857D71;
+  --color-base-70: #6F685D;
+  --color-base-100: #2A2622;
+
+  --accent-h: 233;
+  --accent-s: 61%;
+  --accent-l: 53%;             /* #3F51D1 نيلي */
+
+  --khazaf-olive-rgb: 217, 168, 38;       /* زعفران #D9A826 */
+  --khazaf-highlight-rgb: 217, 168, 38;
+  --khazaf-highlight-alpha: 0.30;
+  --khazaf-ink-rgb: 31, 28, 25;
+  --code-normal: #4A443C;
+  --background-modifier-form-field: #FFFFFF;
+}
+
+.theme-dark.khazaf-scheme-paper {
+  --color-base-00: #1D1B18;
+  --color-base-05: #1A1815;
+  --color-base-10: #252320;
+  --color-base-20: #171513;
+  --color-base-25: #252320;
+  --color-base-30: #2F2C28;
+  --color-base-35: #3B3732;
+  --color-base-40: #48433D;
+  --color-base-50: #6B655B;
+  --color-base-60: #887F74;
+  --color-base-70: #A59E92;
+  --color-base-100: #E8E3DA;
+
+  --accent-h: 233;
+  --accent-s: 100%;
+  --accent-l: 78%;             /* #8E9CFF */
+
+  --khazaf-olive-rgb: 217, 168, 38;
+  --khazaf-highlight-rgb: 217, 168, 38;
+  --khazaf-highlight-alpha: 0.32;
+  --khazaf-ink-rgb: 244, 241, 235;
+  --code-normal: #CFC8BC;
+  --background-modifier-form-field: var(--color-base-20);
+}
+
+/* الهاتف الداكن: Obsidian يفرض #000 بمحدد .is-mobile.theme-dark، فنعيد ألوان اللوحة بمحدد أقوى */
+.is-mobile.theme-dark.khazaf-scheme-paper {
+  --color-base-00: #1D1B18;
+  --color-base-10: #252320;
+  --color-base-20: #171513;
+}
+
+/* ---------- تباين أعلى (khazaf-high-contrast): يعمل مع أي لوحة ---------- */
+body.khazaf-high-contrast {
+  --text-muted: color-mix(in srgb, var(--color-base-70) 55%, var(--color-base-100));
+  --text-faint: color-mix(in srgb, var(--color-base-50) 55%, var(--color-base-100));
+  --background-modifier-border: color-mix(in srgb, var(--color-base-30) 75%, var(--color-base-100));
+  --background-modifier-border-hover: color-mix(in srgb, var(--color-base-35) 70%, var(--color-base-100));
+  --link-unresolved-opacity: 1;
+}
+
+/* ---------- الأشرطة بلون المتن (khazaf-flat-sidebars) ---------- */
+body.khazaf-flat-sidebars {
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --tab-container-background: var(--background-primary);
+  --ribbon-background: var(--background-primary);
+  --status-bar-background: var(--background-primary);
+  --titlebar-background: var(--background-primary);
+  --titlebar-background-focused: var(--background-primary);
+}
+
+
 /* ---------- 20-editor ---------- */
 /* ===== المتن: ما يتجاوز المتغيرات ===== */
 
@@ -311,9 +401,9 @@ body {
   font-weight: 300;
 }
 .markdown-rendered blockquote {
+  /* الحدود كلها أولًا ثم بداية السطر، كي لا يمحو border-right الشريطَ في العربية */
+  border: none;
   border-inline-start: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
-  border-left: none;
-  border-right: none;
   padding-inline-start: var(--size-4-4);
   margin-inline: 0;
 }
@@ -393,8 +483,7 @@ body {
   table-layout: fixed;
   border: none;
   border-collapse: collapse;
-  font-family: var(--khazaf-font-heading);
-  font-size: 1.3em;
+  font-family: var(--khazaf-font-verse);
   line-height: 1.6;
   margin: 0;
 }
@@ -413,8 +502,8 @@ body {
   background: transparent;
   padding: 0.1em 0.5em;
   width: 50%;
-  font-family: var(--khazaf-font-heading);
-  font-size: calc(var(--font-text-size) * 1.3);
+  font-family: var(--khazaf-font-verse);
+  font-size: calc(var(--font-text-size) * var(--khazaf-verse-size));
   line-height: 1.6;
 }
 .callout[data-callout="verse"] td:first-child { text-align: start; }
@@ -560,9 +649,8 @@ body {
 
 /* الجزء المضمّن */
 .markdown-embed {
+  border: none;
   border-inline-start: 2px solid var(--background-modifier-border-hover);
-  border-left: none;
-  border-right: none;
   background: var(--background-primary-alt);
   border-radius: var(--radius-m);
   padding-inline-start: var(--size-4-4);
@@ -766,9 +854,9 @@ body.mod-rtl .search-input-clear-button svg {
 
 /* Obsidian يفرض أسود خالصًا (#000) على الهاتف الداكن عبر .is-mobile.theme-dark؛ نعيد الأردواز بالمحدد نفسه */
 .is-mobile.theme-dark {
-  --color-base-00: #10161A;
-  --color-base-10: #151C1F;
-  --color-base-20: #1C2427;
+  --color-base-00: #151C1F;
+  --color-base-10: #1A2226;
+  --color-base-20: #10161A;
 }
 .is-mobile.theme-light {
   --color-base-100: #1E2A2C;
@@ -839,4 +927,555 @@ body.mod-rtl .search-input-clear-button svg {
 .cm-s-obsidian .cm-cursor-primary {
   border-left-color: var(--interactive-accent);
   border-left-width: 2px;
+}
+
+
+/* ---------- 70-settings ---------- */
+/* @settings
+
+name: Khazaf · خزف
+id: khazaf
+settings:
+    -
+        id: khazaf-info
+        title: About these settings
+        title.ar: عن هذه الإعدادات
+        description: "Every option is optional. The theme works fully without Style Settings."
+        description.ar: "كل خيار هنا اختياري. الثيم يعمل كاملًا بدون هذه الإضافة."
+        type: info-text
+        markdown: true
+
+    -
+        id: khazaf-h-colors
+        title: Colors
+        title.ar: الألوان
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: khazaf-scheme
+        title: Color scheme
+        title.ar: اللوحة
+        description: "Sage & Terracotta (default) or Paper & Indigo."
+        description.ar: "مريمية وطين (الافتراضية) أو ورق ونيلة."
+        type: class-select
+        allowEmpty: false
+        default: khazaf-scheme-sage
+        options:
+            -
+                label: مريمية وطين · Sage & Terracotta
+                value: khazaf-scheme-sage
+            -
+                label: ورق ونيلة · Paper & Indigo
+                value: khazaf-scheme-paper
+    -
+        id: accent
+        title: Accent color
+        title.ar: لون التمييز
+        description: "Links, selection, active items and footnote references. Overrides the scheme's accent."
+        description.ar: "الروابط والتحديد والعنصر النشط ومرجع الحاشية. يتقدّم على لون اللوحة."
+        type: variable-themed-color
+        format: hsl-split
+        opacity: false
+        default-light: '#C2552B'
+        default-dark: '#F0845C'
+    -
+        id: khazaf-olive-rgb
+        title: Quote color
+        title.ar: لون الاقتباس
+        description: "Blockquote bar, poetry callout and tag dots in the graph."
+        description.ar: "شريط الاقتباس، وتنبيه الشعر، ووسوم مخطط الروابط."
+        type: variable-themed-color
+        format: rgb-values
+        opacity: false
+        default-light: '#6E8B3D'
+        default-dark: '#9DB35A'
+    -
+        id: khazaf-highlight-rgb
+        title: Highlight color
+        title.ar: لون التظليل
+        description: "Background of ==highlighted== text and search matches."
+        description.ar: "خلفية النص المظلّل ==هكذا== ونتائج البحث."
+        type: variable-themed-color
+        format: rgb-values
+        opacity: false
+        default-light: '#9AA64A'
+        default-dark: '#B9C45A'
+    -
+        id: khazaf-high-contrast
+        title: Higher contrast
+        title.ar: تباين أعلى
+        description: "Darker secondary text and stronger borders."
+        description.ar: "نص ثانوي أغمق وحدود أوضح."
+        type: class-toggle
+    -
+        id: khazaf-flat-sidebars
+        title: Sidebars match the note background
+        title.ar: الأشرطة بلون المتن
+        description: "One surface for the whole window."
+        description.ar: "سطح واحد للنافذة كلها."
+        type: class-toggle
+
+    -
+        id: khazaf-h-type
+        title: Typography
+        title.ar: الخطوط والقراءة
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: khazaf-body-font
+        title: Body font
+        title.ar: خط المتن
+        description: "A font chosen in Settings › Appearance always takes priority."
+        description.ar: "الخط الذي تختاره من الإعدادات ← المظهر يتقدّم دائمًا."
+        type: class-select
+        allowEmpty: false
+        default: khazaf-body-vazirmatn
+        options:
+            -
+                label: Vazirmatn
+                value: khazaf-body-vazirmatn
+            -
+                label: خط النظام · System font
+                value: khazaf-body-system
+    -
+        id: khazaf-heading-font
+        title: Heading font (H1–H3)
+        title.ar: خط العناوين الكبرى
+        type: class-select
+        allowEmpty: false
+        default: khazaf-heading-markazi
+        options:
+            -
+                label: Markazi Text (نسخي)
+                value: khazaf-heading-markazi
+            -
+                label: خط المتن · Body font
+                value: khazaf-heading-body
+    -
+        id: file-line-width
+        title: Line width
+        title.ar: عرض السطر
+        description: "Needs Settings › Editor › Readable line length."
+        description.ar: "يحتاج تفعيل: الإعدادات ← المحرر ← طول السطر المقروء."
+        type: variable-number-slider
+        default: 700
+        min: 560
+        max: 1000
+        step: 20
+        format: px
+    -
+        id: line-height-normal
+        title: Line height
+        title.ar: تباعد الأسطر
+        description: "Below 1.6, Arabic diacritics may touch between lines."
+        description.ar: "تحت 1.6 قد تتلامس الحركات بين الأسطر."
+        type: variable-number-slider
+        default: 1.75
+        min: 1.5
+        max: 2.1
+        step: 0.05
+    -
+        id: p-spacing
+        title: Paragraph spacing
+        title.ar: تباعد الفقرات
+        type: variable-number-slider
+        default: 1
+        min: 0.25
+        max: 2
+        step: 0.25
+        format: em
+    -
+        id: khazaf-ol-arabic-indic
+        title: Arabic-Indic numbers in ordered lists
+        title.ar: الأرقام العربية الهندية في القوائم المرقّمة
+        description: "١، ٢، ٣ in Reading view. The editor keeps the digits you type."
+        description.ar: "١، ٢، ٣ في وضع القراءة. المحرر يُبقي الأرقام كما كتبتها."
+        type: class-toggle
+
+    -
+        id: khazaf-h-blocks
+        title: Blocks
+        title.ar: عناصر المتن
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: khazaf-callout-style
+        title: Callout style
+        title.ar: شكل التنبيه
+        type: class-select
+        allowEmpty: false
+        default: khazaf-callout-bar
+        options:
+            -
+                label: شريط في بداية السطر · Side bar
+                value: khazaf-callout-bar
+            -
+                label: إطار كامل · Outline
+                value: khazaf-callout-outline
+            -
+                label: خلفية فقط · Soft
+                value: khazaf-callout-soft
+    -
+        id: khazaf-quote-style
+        title: Blockquote style
+        title.ar: شكل الاقتباس
+        type: class-select
+        allowEmpty: false
+        default: khazaf-quote-light
+        options:
+            -
+                label: خفيف · Light
+                value: khazaf-quote-light
+            -
+                label: نسخي · Naskh
+                value: khazaf-quote-naskh
+            -
+                label: عادي · Regular
+                value: khazaf-quote-regular
+    -
+        id: khazaf-footnote-brackets
+        title: Brackets around footnote numbers
+        title.ar: أقواس حول رقم الحاشية
+        description: "Show [1] instead of 1."
+        description.ar: "يُظهر [1] بدل 1."
+        type: class-toggle
+    -
+        id: footnote-size
+        title: Footnote size
+        title.ar: حجم خط الحواشي
+        type: variable-number-slider
+        default: 0.82
+        min: 0.7
+        max: 1
+        step: 0.02
+        format: em
+    -
+        id: khazaf-verse-size
+        title: Poetry size
+        title.ar: حجم بيت الشعر
+        description: "Relative to the body font size."
+        description.ar: "نسبة إلى حجم خط المتن."
+        type: variable-number-slider
+        default: 1.3
+        min: 1
+        max: 1.7
+        step: 0.05
+    -
+        id: khazaf-colored-headings
+        title: Accent-colored headings
+        title.ar: عناوين بلون التمييز
+        type: class-toggle
+    -
+        id: khazaf-classic-checkboxes
+        title: Plain checkboxes only
+        title.ar: صناديق مهام عادية فقط
+        description: "Turns off the alternate checkboxes: [/] in progress · [-] cancelled · [>] deferred · [!] important · [?] question · [*] star"
+        description.ar: "يوقف الصناديق البديلة: [/] قيد التنفيذ · [-] ملغاة · [>] مؤجلة · [!] مهمة · [?] سؤال · [*] مميزة"
+        type: class-toggle
+    -
+        id: khazaf-code-wrap
+        title: Wrap long code lines
+        title.ar: التفاف أسطر الكود الطويلة
+        description: "By default long lines scroll horizontally."
+        description.ar: "افتراضيًا تتمرّر الأسطر الطويلة أفقيًا."
+        type: class-toggle
+
+    -
+        id: khazaf-h-ui
+        title: Interface
+        title.ar: الواجهة
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: khazaf-hide-indent-guides
+        title: Hide file tree guides
+        title.ar: إخفاء خطوط الإرشاد في شجرة الملفات
+        type: class-toggle
+    -
+        id: khazaf-hide-properties-heading
+        title: Hide the "Properties" heading
+        title.ar: إخفاء عنوان «الخصائص»
+        type: class-toggle
+    -
+        id: khazaf-hide-status-bar
+        title: Hide the status bar
+        title.ar: إخفاء شريط الحالة
+        type: class-toggle
+        addCommand: true
+
+*/
+
+/* ===== تنفيذ الخيارات ===== */
+
+/* خط المتن */
+body.khazaf-body-system {
+  --font-text-theme: var(--font-default);
+}
+
+/* خط العناوين */
+body.khazaf-heading-body {
+  --khazaf-font-heading: var(--font-text);
+}
+
+/* القوائم المرقّمة بالأرقام العربية الهندية */
+body.khazaf-ol-arabic-indic .markdown-rendered ol {
+  list-style-type: arabic-indic;
+}
+
+/* شكل التنبيه */
+body.khazaf-callout-outline .callout {
+  border: 1px solid rgba(var(--callout-color), 0.4);
+}
+body.khazaf-callout-soft .callout {
+  border-inline-start: none;
+}
+
+/* شكل الاقتباس */
+body.khazaf-quote-naskh .markdown-rendered blockquote,
+body.khazaf-quote-naskh .cm-s-obsidian .HyperMD-quote {
+  font-family: var(--khazaf-font-verse);
+  font-size: 1.18em;
+  font-weight: 400;
+  line-height: 1.6;
+}
+body.khazaf-quote-regular .markdown-rendered blockquote,
+body.khazaf-quote-regular .cm-s-obsidian .HyperMD-quote {
+  font-weight: var(--font-weight);
+}
+
+/* أقواس الحاشية: نعيد النص الأصلي [1] الذي يكتبه Obsidian */
+body.khazaf-footnote-brackets .markdown-rendered sup.footnote-ref a.footnote-link[data-footref] {
+  font-size: inherit;
+}
+body.khazaf-footnote-brackets .markdown-rendered sup.footnote-ref a.footnote-link[data-footref]::after {
+  content: none;
+}
+
+/* عناوين بلون التمييز */
+body.khazaf-colored-headings {
+  --h1-color: var(--text-accent);
+  --h2-color: var(--text-accent);
+  --h3-color: var(--text-accent);
+  --inline-title-color: var(--text-normal);
+}
+
+/* التفاف الكود (على الحاسب والهاتف) */
+body.khazaf-code-wrap {
+  --code-white-space: pre-wrap;
+}
+body.khazaf-code-wrap .markdown-rendered pre code[class*="language-"] {
+  white-space: pre-wrap;
+}
+
+/* الواجهة */
+body.khazaf-hide-indent-guides {
+  --nav-indentation-guide-color: transparent;
+}
+body.khazaf-hide-properties-heading .metadata-properties-heading {
+  display: none;
+}
+body.khazaf-hide-status-bar .status-bar {
+  display: none;
+}
+
+
+/* ---------- 75-checkboxes ---------- */
+/* ===== صناديق المهام البديلة: تعمل دائمًا، ويوقفها الصنف khazaf-classic-checkboxes من Style Settings =====
+   - [/] قيد التنفيذ  - [-] ملغاة  - [>] مؤجلة  - [!] مهمة  - [?] سؤال  - [*] مميزة
+   الأيقونات أقنعة SVG مضمّنة (data URI)، لا تحمّل شيئًا من الشبكة.
+   */
+
+body {
+  --khazaf-task-icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M6 12h12'/%3E%3C/svg%3E");
+  --khazaf-task-icon-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h13'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E");
+  --khazaf-task-icon-bang: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round'%3E%3Cpath d='M12 5v9'/%3E%3Cpath d='M12 19.5h.01'/%3E%3C/svg%3E");
+  --khazaf-task-icon-question: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.5 8.5a3.5 3.5 0 1 1 5 3.2c-.9.4-1.5 1.2-1.5 2.2v.6'/%3E%3Cpath d='M12 19h.01'/%3E%3C/svg%3E");
+  --khazaf-task-icon-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M12 3.2l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.6l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z'/%3E%3C/svg%3E");
+}
+
+/* الصندوق نفسه: في المحرر يحمل الصندوق data-task، وفي القراءة يحمله عنصر القائمة li */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="-"], li[data-task="-"] > input.task-list-item-checkbox, li[data-task="-"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="!"], li[data-task="!"] > input.task-list-item-checkbox, li[data-task="!"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="?"], li[data-task="?"] > input.task-list-item-checkbox, li[data-task="?"] > p > input.task-list-item-checkbox),
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="*"], li[data-task="*"] > input.task-list-item-checkbox, li[data-task="*"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--checkbox-color);
+  background-color: var(--khazaf-task-color);
+  border-color: var(--khazaf-task-color);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="-"], li[data-task="-"] > input.task-list-item-checkbox, li[data-task="-"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="!"], li[data-task="!"] > input.task-list-item-checkbox, li[data-task="!"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="?"], li[data-task="?"] > input.task-list-item-checkbox, li[data-task="?"] > p > input.task-list-item-checkbox)::after,
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="*"], li[data-task="*"] > input.task-list-item-checkbox, li[data-task="*"] > p > input.task-list-item-checkbox)::after {
+  mask-size: 72%;
+  mask-position: 50% 50%;
+}
+
+/* [/] قيد التنفيذ: نصف ممتلئ من بداية السطر */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox) {
+  background: linear-gradient(to left, var(--checkbox-color) 50%, var(--background-modifier-form-field) 50%);
+  border-color: var(--checkbox-color);
+}
+body:not(.mod-rtl):not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox) {
+  background: linear-gradient(to right, var(--checkbox-color) 50%, var(--background-modifier-form-field) 50%);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="/"], li[data-task="/"] > input.task-list-item-checkbox, li[data-task="/"] > p > input.task-list-item-checkbox)::after {
+  display: none;
+}
+
+/* [-] ملغاة */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="-"], li[data-task="-"] > input.task-list-item-checkbox, li[data-task="-"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--text-faint);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="-"], li[data-task="-"] > input.task-list-item-checkbox, li[data-task="-"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-minus);
+}
+body:not(.khazaf-classic-checkboxes) .markdown-rendered li[data-task="-"],
+body:not(.khazaf-classic-checkboxes) .HyperMD-task-line[data-task="-"] {
+  color: var(--text-faint);
+  text-decoration: line-through;
+}
+
+/* [>] مؤجلة: السهم يتجه مع اتجاه الكتابة */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--color-blue);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-arrow);
+}
+body.mod-rtl:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task=">"], li[data-task=">"] > input.task-list-item-checkbox, li[data-task=">"] > p > input.task-list-item-checkbox)::after {
+  transform: scaleX(-1);
+}
+
+/* [!] مهمة */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="!"], li[data-task="!"] > input.task-list-item-checkbox, li[data-task="!"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--color-red);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="!"], li[data-task="!"] > input.task-list-item-checkbox, li[data-task="!"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-bang);
+}
+
+/* [?] سؤال */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="?"], li[data-task="?"] > input.task-list-item-checkbox, li[data-task="?"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--color-yellow);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="?"], li[data-task="?"] > input.task-list-item-checkbox, li[data-task="?"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-question);
+}
+
+/* [*] مميزة */
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="*"], li[data-task="*"] > input.task-list-item-checkbox, li[data-task="*"] > p > input.task-list-item-checkbox) {
+  --khazaf-task-color: var(--color-orange);
+}
+body:not(.khazaf-classic-checkboxes) :is(input.task-list-item-checkbox[data-task="*"], li[data-task="*"] > input.task-list-item-checkbox, li[data-task="*"] > p > input.task-list-item-checkbox)::after {
+  mask-image: var(--khazaf-task-icon-star);
+}
+
+/* المهام البديلة لا تُشطب كأنها منجزة، عدا الملغاة */
+body:not(.khazaf-classic-checkboxes) .markdown-rendered li.task-list-item.is-checked:is([data-task="/"], [data-task=">"], [data-task="!"], [data-task="?"], [data-task="*"]),
+body:not(.khazaf-classic-checkboxes) .HyperMD-task-line:is([data-task="/"], [data-task=">"], [data-task="!"], [data-task="?"], [data-task="*"]) {
+  color: var(--text-normal);
+  text-decoration: none;
+}
+
+
+/* ---------- 80-cssclasses ---------- */
+/* ===== أصناف الملاحظات: تُكتب في خاصية cssclasses =====
+   ---
+   cssclasses:
+     - khazaf-wide
+   --- */
+
+/* صفحة عريضة: تتجاهل عرض السطر المقروء */
+.markdown-source-view.khazaf-wide,
+.markdown-preview-view.khazaf-wide {
+  --file-line-width: 100%;
+}
+
+/* مضغوطة: لليوميات والقوائم الكثيفة */
+.markdown-source-view.khazaf-compact,
+.markdown-preview-view.khazaf-compact {
+  --line-height-normal: 1.55;
+  --p-spacing: 0.5em;
+  --heading-spacing: 1.4em;
+}
+
+/* ملاحظة شعر: كل الفقرات في الوسط بخط نسخي أكبر */
+.markdown-preview-view.khazaf-poetry p,
+.markdown-source-view.khazaf-poetry .cm-line:not(.HyperMD-codeblock):not(.HyperMD-header) {
+  font-family: var(--khazaf-font-verse);
+  font-size: calc(var(--font-text-size) * var(--khazaf-verse-size));
+  line-height: 1.9;
+  text-align: center;
+}
+.markdown-preview-view.khazaf-poetry h1,
+.markdown-preview-view.khazaf-poetry h2,
+.markdown-preview-view.khazaf-poetry h3,
+.markdown-preview-view.khazaf-poetry .inline-title,
+.markdown-source-view.khazaf-poetry .inline-title,
+.markdown-source-view.khazaf-poetry .HyperMD-header {
+  text-align: center;
+}
+.markdown-preview-view.khazaf-poetry hr {
+  width: 30%;
+  margin-inline: auto;
+}
+
+
+/* ---------- 85-plugins ---------- */
+/* ===== دعم الإضافات ===== */
+
+/* --- Dataview: الجداول تأخذ تنسيق جداول الثيم، والحقول المضمّنة كحبّات --- */
+.markdown-rendered table.dataview th,
+.markdown-rendered .table-view-table th {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  font-weight: var(--table-header-weight);
+}
+.markdown-rendered .table-view-table > thead > tr > th {
+  border-bottom: var(--table-border-width) solid var(--table-border-color);
+}
+.dataview.small-text,
+.dataview .small-text {
+  color: var(--text-faint);
+}
+.dataview.inline-field-key {
+  background: var(--tag-background);
+  color: var(--tag-color);
+  border-radius: var(--radius-s);
+  padding: 0 0.4em;
+  font-size: var(--font-smaller);
+}
+.dataview.inline-field-value {
+  background: var(--background-modifier-hover);
+  border-radius: var(--radius-s);
+  padding: 0 0.4em;
+  font-size: var(--font-smaller);
+}
+
+/* --- Style Settings: عناوين المجموعات بخط الواجهة الثقيل --- */
+.style-settings-heading .setting-item-name {
+  font-weight: 600;
+}
+
+/* --- الطباعة وتصدير PDF --- */
+.print .callout,
+.print pre,
+.print table,
+.print .callout[data-callout="verse"] {
+  break-inside: avoid;
+}
+.print pre,
+.print pre code[class*="language-"] {
+  white-space: pre-wrap;
+}
+.print .markdown-rendered .footnotes li:target {
+  background: none;
 }

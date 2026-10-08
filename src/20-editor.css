@@ -6,9 +6,9 @@
   font-weight: 300;
 }
 .markdown-rendered blockquote {
+  /* الحدود كلها أولًا ثم بداية السطر، كي لا يمحو border-right الشريطَ في العربية */
+  border: none;
   border-inline-start: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
-  border-left: none;
-  border-right: none;
   padding-inline-start: var(--size-4-4);
   margin-inline: 0;
 }
@@ -88,8 +88,7 @@
   table-layout: fixed;
   border: none;
   border-collapse: collapse;
-  font-family: var(--khazaf-font-heading);
-  font-size: 1.3em;
+  font-family: var(--khazaf-font-verse);
   line-height: 1.6;
   margin: 0;
 }
@@ -108,8 +107,8 @@
   background: transparent;
   padding: 0.1em 0.5em;
   width: 50%;
-  font-family: var(--khazaf-font-heading);
-  font-size: calc(var(--font-text-size) * 1.3);
+  font-family: var(--khazaf-font-verse);
+  font-size: calc(var(--font-text-size) * var(--khazaf-verse-size));
   line-height: 1.6;
 }
 .callout[data-callout="verse"] td:first-child { text-align: start; }
@@ -255,9 +254,8 @@
 
 /* الجزء المضمّن */
 .markdown-embed {
+  border: none;
   border-inline-start: 2px solid var(--background-modifier-border-hover);
-  border-left: none;
-  border-right: none;
   background: var(--background-primary-alt);
   border-radius: var(--radius-m);
   padding-inline-start: var(--size-4-4);

@@ -1,0 +1,83 @@
+/* ===== لوحات بديلة تُختار من Style Settings (khazaf-scheme) =====
+   الافتراضية «مريمية وطين» معرّفة في 10-variables.css ولا تحتاج صنفًا.
+   لون التمييز ولون الاقتباس والتظليل إن غيّرها المستخدم من الإعدادات تتقدّم على اللوحة. */
+
+/* ---------- ورق ونيلة: اللوحة الأولى من التصميم ---------- */
+.theme-light.khazaf-scheme-paper {
+  --color-base-00: #FCFBF8;
+  --color-base-05: #F9F7F2;
+  --color-base-10: #F6F3EC;
+  --color-base-20: #F6F3EC;
+  --color-base-25: #EFEBE2;
+  --color-base-30: #E4DED3;
+  --color-base-35: #D2CBBE;
+  --color-base-40: #C2BAAB;
+  --color-base-50: #9B9386;
+  --color-base-60: #857D71;
+  --color-base-70: #6F685D;
+  --color-base-100: #2A2622;
+
+  --accent-h: 233;
+  --accent-s: 61%;
+  --accent-l: 53%;             /* #3F51D1 نيلي */
+
+  --khazaf-olive-rgb: 217, 168, 38;       /* زعفران #D9A826 */
+  --khazaf-highlight-rgb: 217, 168, 38;
+  --khazaf-highlight-alpha: 0.30;
+  --khazaf-ink-rgb: 31, 28, 25;
+  --code-normal: #4A443C;
+  --background-modifier-form-field: #FFFFFF;
+}
+
+.theme-dark.khazaf-scheme-paper {
+  --color-base-00: #1D1B18;
+  --color-base-05: #1A1815;
+  --color-base-10: #252320;
+  --color-base-20: #171513;
+  --color-base-25: #252320;
+  --color-base-30: #2F2C28;
+  --color-base-35: #3B3732;
+  --color-base-40: #48433D;
+  --color-base-50: #6B655B;
+  --color-base-60: #887F74;
+  --color-base-70: #A59E92;
+  --color-base-100: #E8E3DA;
+
+  --accent-h: 233;
+  --accent-s: 100%;
+  --accent-l: 78%;             /* #8E9CFF */
+
+  --khazaf-olive-rgb: 217, 168, 38;
+  --khazaf-highlight-rgb: 217, 168, 38;
+  --khazaf-highlight-alpha: 0.32;
+  --khazaf-ink-rgb: 244, 241, 235;
+  --code-normal: #CFC8BC;
+  --background-modifier-form-field: var(--color-base-20);
+}
+
+/* الهاتف الداكن: Obsidian يفرض #000 بمحدد .is-mobile.theme-dark، فنعيد ألوان اللوحة بمحدد أقوى */
+.is-mobile.theme-dark.khazaf-scheme-paper {
+  --color-base-00: #1D1B18;
+  --color-base-10: #252320;
+  --color-base-20: #171513;
+}
+
+/* ---------- تباين أعلى (khazaf-high-contrast): يعمل مع أي لوحة ---------- */
+body.khazaf-high-contrast {
+  --text-muted: color-mix(in srgb, var(--color-base-70) 55%, var(--color-base-100));
+  --text-faint: color-mix(in srgb, var(--color-base-50) 55%, var(--color-base-100));
+  --background-modifier-border: color-mix(in srgb, var(--color-base-30) 75%, var(--color-base-100));
+  --background-modifier-border-hover: color-mix(in srgb, var(--color-base-35) 70%, var(--color-base-100));
+  --link-unresolved-opacity: 1;
+}
+
+/* ---------- الأشرطة بلون المتن (khazaf-flat-sidebars) ---------- */
+body.khazaf-flat-sidebars {
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --tab-container-background: var(--background-primary);
+  --ribbon-background: var(--background-primary);
+  --status-bar-background: var(--background-primary);
+  --titlebar-background: var(--background-primary);
+  --titlebar-background-focused: var(--background-primary);
+}

@@ -1,0 +1,40 @@
+/* ===== أصناف الملاحظات: تُكتب في خاصية cssclasses =====
+   ---
+   cssclasses:
+     - khazaf-wide
+   --- */
+
+/* صفحة عريضة: تتجاهل عرض السطر المقروء */
+.markdown-source-view.khazaf-wide,
+.markdown-preview-view.khazaf-wide {
+  --file-line-width: 100%;
+}
+
+/* مضغوطة: لليوميات والقوائم الكثيفة */
+.markdown-source-view.khazaf-compact,
+.markdown-preview-view.khazaf-compact {
+  --line-height-normal: 1.55;
+  --p-spacing: 0.5em;
+  --heading-spacing: 1.4em;
+}
+
+/* ملاحظة شعر: كل الفقرات في الوسط بخط نسخي أكبر */
+.markdown-preview-view.khazaf-poetry p,
+.markdown-source-view.khazaf-poetry .cm-line:not(.HyperMD-codeblock):not(.HyperMD-header) {
+  font-family: var(--khazaf-font-verse);
+  font-size: calc(var(--font-text-size) * var(--khazaf-verse-size));
+  line-height: 1.9;
+  text-align: center;
+}
+.markdown-preview-view.khazaf-poetry h1,
+.markdown-preview-view.khazaf-poetry h2,
+.markdown-preview-view.khazaf-poetry h3,
+.markdown-preview-view.khazaf-poetry .inline-title,
+.markdown-source-view.khazaf-poetry .inline-title,
+.markdown-source-view.khazaf-poetry .HyperMD-header {
+  text-align: center;
+}
+.markdown-preview-view.khazaf-poetry hr {
+  width: 30%;
+  margin-inline: auto;
+}
